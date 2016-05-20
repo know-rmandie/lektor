@@ -1,18 +1,31 @@
 <!doctype html>
-<meta charset="utf-8">
-<link rel="stylesheet" href="{{ '/static/style.css'|url }}">
-<title>{% block title %}Welcome{% endblock %} — lector_example</title>
+
+   <meta charset="utf-8">
+   <meta name="date-created" value="{% block created %}{% endblock %}" />
+   <meta name="date-modified" value="{% block modified %}{% endblock %}" />
+   <meta name="author" value="{% block author %}{% endblock %}" />
+   <meta name="keywords" value="{% block keywords %}{% endblock %}" />
+
+   <title>{% block title %}{% endblock %} — know-rmandie</title>
+
+   <meta name="viewport" content="width=device-width, user-scalable=yes">
+   <link rel="stylesheet" href="{{ '/static/font-awesome.css'|url }}">
+   <link rel="stylesheet" href="{{ '/static/style.css'|url }}">
+   <script src="{{ '/static/jquery.js'|url }}"></script>
+	<script src="{{ '/static/init.js'|url }}"></script>
+
 <body>
   <header>
-    <h1>lector_example</h1>
+    <h1>{% block title %}{% endblock %}</h1>
     <nav>
       <ul class="nav navbar-nav">
         <li{% if this._path == '/' %} class="active"{% endif
           %}><a href="{{ '/'|url }}">Welcome</a></li>
         {% for href, title in [
-          ['/blog', 'Blog'],
-          ['/projects', 'Projects'],
-          ['/about', 'About']
+          ['/planification', 'Planification'],
+          ['/I', 'Indicateurs'],
+          ['/urbanisme', 'Urbanisme'],
+          ['/ville-durable', 'Ville durable']
         ] %}
           <li{% if this.is_child_of(href) %} class="active"{% endif
             %}><a href="{{ href|url }}">{{ title }}</a></li>
@@ -20,10 +33,12 @@
       </ul>
     </nav>
   </header>
+
   <div class="page">
     {% block body %}{% endblock %}
   </div>
+
   <footer>
-    &copy; Copyright 2016 by vera,,,.
+    {% block modified %}{% endblock %} - DREAL Normandie
   </footer>
 </body>
