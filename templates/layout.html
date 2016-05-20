@@ -6,7 +6,7 @@
    <meta name="author" value="{% block author %}{% endblock %}" />
    <meta name="keywords" value="{% block keywords %}{% endblock %}" />
 
-   <title>{% block title %}{% endblock %} — know-rmandie</title>
+   <title>{% block title %}{{ this.title }}{% endblock %} — know-rmandie</title>
 
    <meta name="viewport" content="width=device-width, user-scalable=yes">
    <link rel="stylesheet" href="{{ '/static/font-awesome.css'|url }}">
@@ -16,7 +16,7 @@
 
 <body>
   <header>
-    <h1>{% block title %}{% endblock %}</h1>
+    <h1>{{ this.title }}</h1>
     <nav>
       <ul class="nav navbar-nav">
         <li{% if this._path == '/' %} class="active"{% endif
