@@ -6,7 +6,7 @@
    <meta name="author" value="{% block author %}{% endblock %}" />
    <meta name="keywords" value="{% block keywords %}{% endblock %}" />
 
-   <title>{% block title %}{{ this.title }}{% endblock %} — know-rmandie</title>
+   <title>{{ this.title }} — know-rmandie</title>
 
    <meta name="viewport" content="width=device-width, user-scalable=yes">
    <link rel="stylesheet" href="{{ '/static/font-awesome.css'|url }}">
@@ -39,6 +39,6 @@
   </div>
 
   <footer>
-    {% block modified %}{% endblock %} - DREAL Normandie
+    {{ this.modified }} - DREAL Normandie
   </footer>
 </body>
