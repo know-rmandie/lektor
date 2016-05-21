@@ -15,30 +15,41 @@
 	<script src="{{ '/static/init.js'|url }}"></script>
 
 <body>
-  <header>
-    <h1>{{ this.title }}</h1>
-    <nav>
-      <ul class="nav navbar-nav">
-        <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
-        {% for href, title in [
-          ['/planification', 'Planification'],
-          ['/I', 'Indicateurs'],
-          ['/urbanisme', 'Urbanisme'],
-          ['/ville-durable', 'Ville durable']
-        ] %}
-          <li{% if this.is_child_of(href) %} class="active"{% endif
-            %}><a href="{{ href|url }}">{{ title }}</a></li>
-        {% endfor %}
-      </ul>
-    </nav>
-  </header>
-
-  <div class="page">
-    {% block body %}{% endblock %}
+  <div id="page" class="page"">
+      <header id="header" class="header" role="banner">
+          <h1>{{ this.title }}</h1>
+          <div id="nav" class="nav" role="navigation">
+              <p id="navIcon" class="fa fa-2x fa-icon fa-bars"></p>
+              <ul>
+                  <li{% if this._path == '/' %} class="active"{% endif
+                    %}><a href="{{ '/'|url }}">Accueil</a></li>
+                  {% for href, title in [
+                    ['/planification', 'Planification'],
+                    ['/I', 'Indicateurs'],
+                    ['/urbanisme', 'Urbanisme'],
+                    ['/ville-durable', 'Ville durable']
+                  ] %}
+                    <li{% if this.is_child_of(href) %} class="active"{% endif
+                      %}><a href="{{ href|url }}">{{ title }}</a></li>
+                  {% endfor %}
+              </ul>
+          </div>
+      </header>
+      <div id="main" class="main" role="main">
+          {% block body %}{% endblock %}
+      </div>
+      <footer id="footer" class="footer" role="banner">
+          Réalisation : <a href="http://www.normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - {{ this.modified }}.
+      </footer>
   </div>
+  <script>
+      /* comptage Google */
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-109815-13', 'know-rmandie.gitlab.io');
+      ga('send', 'pageview');
+  </script>
 
-  <footer>
-    {{ this.modified }} - DREAL Normandie
-  </footer>
 </body>

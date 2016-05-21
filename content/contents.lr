@@ -1,7 +1,11 @@
 title: Know-rmandie
+---
 created: 2012-10-10
+---
 modified: 2016-05-20
+---
 author: Sylvain Comte
+---
 keywords: territoires,normandie,connaissance,outils,visualisation,cartographie,indicateurs,aménagement,urbanisme,ville durable,économie,consommation d'espace,dataviz,opensource,opendata
 ---
 body:
@@ -15,3 +19,4 @@ Ce site sert de support pour le partage et la mise à disposition d'informations
    <li class="fa-li fa fa-area-chart"><span><a href="./I/CE">Indicateurs de consommation</a> d'espace</span></li>
    <li class="fa-li fa fa-map-marker"><span><a href="./ville-durable">Carte des écoquartiers</a> en Normandie (et <a href="./ville-durable/france.html">en France</a>)</span></li>
 </ul>
+---
