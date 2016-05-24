@@ -1,4 +1,3 @@
-{% from "macros/menu-left.html" import menu-left %}
 <!doctype html>
 <html>
 
@@ -24,7 +23,7 @@
    {% block scripts %}{% endblock %}
 </head>
 
-<body class="hide-sidedrawer">
+<body class="hide-sidedrawerhide-sidedrawerhide-sidedrawer">
    <div id="sidedrawer" class="mui--no-user-select">
       <div id="sidedrawer-brand" class="mui--appbar-line-height">know-rmandie</div>
       <div class="mui-divider"></div>
@@ -40,9 +39,7 @@
          <li>
             <strong>Chapitres</strong>
             <ul>
-               {% for child in this.pagination.items %}
-               {{ menu-left(child, from_index=true) }}
-               {% endfor %}
+               {% block listpage %}{% endblock %}
             </ul>
          </li>
          <li>

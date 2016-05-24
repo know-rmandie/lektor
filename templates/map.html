@@ -1,4 +1,6 @@
 {% extends "layout.html" %}
+{% from "macros/menu-left.html" import menu-left %}
+
 {% block stylesheets %}
    <link rel="stylesheet" href="{{ '/static/lib/leaflet.css'|url }}">
    <link rel="stylesheet" href="{{ '/static/lib/leaflet-markercluster.css'|url }}">
@@ -8,6 +10,13 @@
    <script src="{{ '/static/lib/leaflet.js'|url }}"></script>
    <script src="{{ '/static/lib/leaflet-markercluster.js'|url }}"></script>
 {% endblock %}
+
+{% block listpage %}
+   {% for child in this.pagination.items %}
+      {{ menu-left(child, from_index=true) }}
+   {% endfor %}
+{% endblock %}
+
 {% block body %}
    <div id="map" class="map" style="width:500px;height:500px"></div>
 {% endblock %}

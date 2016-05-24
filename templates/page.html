@@ -1,4 +1,11 @@
 {% extends "layout.html" %}
+{% from "macros/menu-left.html" import menu-left %}
+{% block listpage %}
+   {% for child in this.pagination.items %}
+      {{ menu-left(child, from_index=true) }}
+   {% endfor %}
+{% endblock %}
+
 {% block body %}
   {{ this.body }}
 {% endblock %}
