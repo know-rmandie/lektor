@@ -8,20 +8,19 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- metadata -->
-   <title>{% block title %}{{ this.title }}{% endblock %} — know-rmandie</title>
-   <meta name="date-created" value="{% block created %}{% endblock %}" />
-   <meta name="date-modified" value="{% block modified %}{% endblock %}" />
-   <meta name="author" value="{% block author %}{% endblock %}" />
-   <meta name="keywords" value="{% block keywords %}{% endblock %}" />
+   <title>{{ this.title }} — know-rmandie</title>
+   <meta name="date-created" value="{{ this.created }}" />
+   <meta name="date-modified" value="{{ this.modified }}" />
+   <meta name="author" value="{{ this.author }}" />
+   <meta name="keywords" value="{{ this.keywords }}" />
    <!-- styling -->
    <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
-
    {% block stylesheets %}{% endblock %}
    <!-- scripts -->
    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
    <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
    {% block scripts %}{% endblock %}
-   
+
 </head>
 
 <body>
@@ -83,7 +82,7 @@
 
    <footer id="footer">
       <div class="mui-container-fluid">
-        {% block modified %}{% endblock %} - DREAL Normandie - réalisé sur la base de <a href="https://www.muicss.com">MUI</a>
+        {{ this.modified }} - DREAL Normandie - réalisé sur la base de <a href="https://www.muicss.com">MUI</a>
       </div>
    </footer>
 
