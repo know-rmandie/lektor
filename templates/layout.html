@@ -31,13 +31,21 @@
          <!-- retour au parent -->
          {% if this.parent %}
          <li>
+            <a href="{{ this.parent|url }}">{{ this.parent.title }}</a>
+         </li>
+         {% endif %}
+         {% if this.children %}
+         <li>
+            <span>{{ this.title }}</span>
             <ul>
-               <li><a href="{{ this.parent|url }}">{{ this.parent.title }}</a></li>
+               {% for child in this.children %}
+                  <li><a href="{{ child|url }}">{{ child.title }}</a></li>
+               {% endfor %}
             </ul>
          </li>
          {% endif %}
          <li>
-            <strong>Naviguer</strong>
+            <strong>know-rmandie</strong>
             <ul>
                {% for path, label in bag('navigation').iteritems() %}
                   {% if this.is_child_of(path) %}
@@ -47,35 +55,27 @@
                {% endfor %}
             </ul>
          </li>
-         {% if this.children %}
-         <li>
-            <strong>Explorer</strong>
-            <ul>
-               {% for child in this.children %}
-                  <li><a href="{{ child|url }}">{{ child.title }}</a></li>
-               {% endfor %}
-            </ul>
-         </li>
-         {% endif %}
+
       </ul>
     </div>
 
-    <header id="header">
+   <header id="header">
       <div class="mui-appbar mui--appbar-line-height">
-        <div class="mui-container-fluid">
-          <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
-          <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
-          <span class="mui--text-title mui--visible-md-inline-block mui--visible-lg-inline-block">{{ this.title }}</span>
-          {% for path, label in bag('navigation').iteritems() %}
-             {% if this.is_child_of(path) %}
-               <span class="mui--text-menu mui--is-active">{{ label }}</span>
-             {% else %}
-                <span class="mui--text-menu"><a href="{{ path|url }}">{{ label }}</a></span>
-             {% endif %}
-          {% endfor %}
-        </div>
+         <div class="mui-container-fluid">
+            <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+            <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+            <div class="mui--hidden-xs mui--hidden-sm">
+               {% for path, label in bag('navigation').iteritems() %}
+                  {% if this.is_child_of(path) %}
+                     <mui-btn color="accent" align="right" disabled>{{ label }}</mui-btn>
+                  {% else %}
+                     <mui-btn color="primary" align="right"><a href="{{ path|url }}">{{ label }}</a></mui-btn>
+                  {% endif %}
+               {% endfor %}
+            </div>
+         </div>
       </div>
-    </header>
+   </header>
 
     <div id="content-wrapper">
       <div class="mui--appbar-height"></div>
