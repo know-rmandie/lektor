@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
-{% from "macros/menu-left.html" import menu-left %}
-
+{% block listpages %}
+   {% for child in this.pagination.items %}
+      <li><a href="{{ child|url }}">{{ child.title }}</a></li>
+   {% endfor %}
+{% endblock %}
 
 {% block body %}
   {{ this.body }}
