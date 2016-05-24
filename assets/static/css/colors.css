@@ -1,0 +1,34 @@
+/**
+ * Body CSS
+ */
+
+html,
+body {
+  background-color: #eee;
+}
+
+html,
+body,
+input,
+textarea,
+buttons {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+#sidedrawer {
+  background-color: #fff;
+}
+
+#footer, #footer a, .sidedrawer-toggle, .sidedrawer-toggle:hover {
+  color: #fff;
+}
+
+#sidedrawer strong:hover {
+  background-color: #E0E0E0;
+}
+
+#footer {
+  background-color: #0288D1;
+}
