@@ -1,44 +1,92 @@
 <!doctype html>
 
+<html>
+
+<head>
+   <!-- technical -->
    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- metadata -->
+   <title>{% block title %}{{ this.title }}{% endblock %} — know-rmandie</title>
    <meta name="date-created" value="{% block created %}{% endblock %}" />
    <meta name="date-modified" value="{% block modified %}{% endblock %}" />
    <meta name="author" value="{% block author %}{% endblock %}" />
    <meta name="keywords" value="{% block keywords %}{% endblock %}" />
+   <!-- styling -->
+   <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
 
-   <title>{% block title %}{{ this.title }}{% endblock %} — know-rmandie</title>
-
-   <meta name="viewport" content="width=device-width, user-scalable=yes">
-   <link rel="stylesheet" href="{{ '/static/font-awesome.css'|url }}">
-   <link rel="stylesheet" href="{{ '/static/style.css'|url }}">
-   <script src="{{ '/static/jquery.js'|url }}"></script>
-	<script src="{{ '/static/init.js'|url }}"></script>
+   {% block stylesheets %}{% endblock %}
+   <!-- scripts -->
+   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+   <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+   {% block scripts %}{% endblock %}
+   
+</head>
 
 <body>
-  <header>
-    <h1>{{ this.title }}</h1>
-    <nav>
-      <ul class="nav navbar-nav">
-        <li{% if this._path == '/' %} class="active"{% endif
-          %}><a href="{{ '/'|url }}">Welcome</a></li>
-        {% for href, title in [
-          ['/planification', 'Planification'],
-          ['/I', 'Indicateurs'],
-          ['/urbanisme', 'Urbanisme'],
-          ['/ville-durable', 'Ville durable']
-        ] %}
-          <li{% if this.is_child_of(href) %} class="active"{% endif
-            %}><a href="{{ href|url }}">{{ title }}</a></li>
-        {% endfor %}
+   <div id="sidedrawer" class="mui--no-user-select">
+      <div id="sidedrawer-brand" class="mui--appbar-line-height">know-rmandie</div>
+      <div class="mui-divider"></div>
+      <ul>
+        <li>
+          <strong>Thèmes</strong>
+          <ul>
+             <li{% if this._path == '/' %} class="active"{% endif
+               %}><a href="{{ '/'|url }}">Welcome</a></li>
+             {% for href, title in [
+               ['/planification', 'Planification'],
+               ['/I', 'Indicateurs'],
+               ['/urbanisme', 'Urbanisme'],
+               ['/ville-durable', 'Ville durable']
+             ] %}
+               <li{% if this.is_child_of(href) %} class="active"{% endif
+                 %}><a href="{{ href|url }}">{{ title }}</a></li>
+             {% endfor %}
+          </ul>
+        </li>
+        <li>
+          <strong>Category 2</strong>
+          <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+          </ul>
+        </li>
+        <li>
+          <strong>Category 3</strong>
+          <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+          </ul>
+        </li>
       </ul>
-    </nav>
-  </header>
+    </div>
 
-  <div class="page">
-    {% block body %}{% endblock %}
-  </div>
+    <header id="header">
+      <div class="mui-appbar mui--appbar-line-height">
+        <div class="mui-container-fluid">
+          <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
+          <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
+          <span class="mui--text-title mui--visible-xs-inline-block mui--visible-sm-inline-block"><h1>{{ this.title }}</h1></span>
+        </div>
+      </div>
+    </header>
 
-  <footer>
-    {% block modified %}{% endblock %} - DREAL Normandie
-  </footer>
+    <div id="content-wrapper">
+      <div class="mui--appbar-height"></div>
+      <div class="mui-container-fluid">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+
+   <footer id="footer">
+      <div class="mui-container-fluid">
+        {% block modified %}{% endblock %} - DREAL Normandie - réalisé sur la base de <a href="https://www.muicss.com">MUI</a>
+      </div>
+   </footer>
+
 </body>
+
+</html>

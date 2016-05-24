@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block stylesheets %}
+   <link rel="stylesheet" href="{{ '/static/lib/leaflet.css'|url }}">
+   <link rel="stylesheet" href="{{ '/static/lib/leaflet-markercluster.css'|url }}">
+   <link rel="stylesheet" href="{{ '/static/css/leaflet-knwrmd.css'|url }}">
+{% endblock %}
+{% block scripts %}
+   <script src="{{ '/static/lib/leaflet.js'|url }}"></script>
+   <script src="{{ '/static/lib/leaflet-markercluster.js'|url }}"></script>
+{% endblock %}
+{% block body %}
+   <div id="map" class="map" style="width:500px;height:500px"></div>
+{% endblock %}
