@@ -8,11 +8,6 @@
    <script src="{{ '/static/lib/leaflet.js'|url }}"></script>
    <script src="{{ '/static/lib/leaflet-markercluster.js'|url }}"></script>
 {% endblock %}
-{% block listchilds %}
-   {% for child in this.children %}
-      <li><a href="{{ child|url }}">{{ child.title }}</a></li>
-   {% endfor %}
-{% endblock %}
 {% block body %}
    <div id="map" class="map" style="width:500px;height:500px"></div>
 {% endblock %}
