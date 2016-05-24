@@ -1,5 +1,5 @@
-﻿<!doctype html>
-
+{% from "macros/menu-left.html" import menu-left %}
+<!doctype html>
 <html>
 
 <head>
@@ -15,50 +15,43 @@
    <meta name="keywords" value="{{ this.keywords }}" />
    <!-- styling -->
    <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="{{ '/static/css/style.css'|url }}" />
    {% block stylesheets %}{% endblock %}
    <!-- scripts -->
    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
    <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+   <script src="{{ '/static/js/init.js'|url }}"></script>
    {% block scripts %}{% endblock %}
-
 </head>
 
-<body>
+<body class="hide-sidedrawer">
    <div id="sidedrawer" class="mui--no-user-select">
       <div id="sidedrawer-brand" class="mui--appbar-line-height">know-rmandie</div>
       <div class="mui-divider"></div>
       <ul>
-        <li>
-          <strong>Thèmes</strong>
-          <ul>
-             <li{% if this._path == '/' %} class="active"{% endif
-               %}><a href="{{ '/'|url }}">Welcome</a></li>
-             {% for href, title in [
-               ['/planification', 'Planification'],
-               ['/I', 'Indicateurs'],
-               ['/urbanisme', 'Urbanisme'],
-               ['/ville-durable', 'Ville durable']
-             ] %}
-               <li{% if this.is_child_of(href) %} class="active"{% endif
-                 %}><a href="{{ href|url }}">{{ title }}</a></li>
-             {% endfor %}
-          </ul>
-        </li>
-        <li>
-          <strong>Category 2</strong>
-          <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-          </ul>
-        </li>
-        <li>
-          <strong>Category 3</strong>
-          <ul>
-            <li><a href="#">Item 1</a></li>
-            <li><a href="#">Item 2</a></li>
-            <li><a href="#">Item 3</a></li>
-          </ul>
+         <li>
+            <strong>Category 2</strong>
+            <ul>
+               <li><a href="#">Item 1</a></li>
+               <li><a href="#">Item 2</a></li>
+               <li><a href="#">Item 3</a></li>
+            </ul>
+         </li>
+         <li>
+            <strong>Chapitres</strong>
+            <ul>
+               {% for child in this.pagination.items %}
+               {{ menu-left(child, from_index=true) }}
+               {% endfor %}
+            </ul>
+         </li>
+         <li>
+            <strong>Category 3</strong>
+            <ul>
+               <li><a href="#">Item 1</a></li>
+               <li><a href="#">Item 2</a></li>
+               <li><a href="#">Item 3</a></li>
+            </ul>
         </li>
       </ul>
     </div>
