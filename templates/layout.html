@@ -31,16 +31,15 @@
       <div class="mui-divider"></div>
          <ul>
          <!-- essai de navigation récursive -->
-         {% for child in root.children %}
-            {% set rubrique = child %}
-            {% if this.is_child_of(rubrique._path) %}
-            <strong><a href="{{ rubrique|url }}">{{ rubrique.title }}</a></strong>
+         {% for path, label in bag('navigation').iteritems() %}
+            {% if this.is_child_of(path) %}
+            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
             <ul style="display:block">
             {% else %}
-            <strong><a href="{{ rubrique|url }}">{{ rubrique.title }}</a></strong>
+            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
             <ul style="display:none">
             {% endif %}
-            {% for child in child.children recursive %}
+            {% for child in path.children recursive %}
                <li{% if this._path == child._path %} class="active"{% endif %}>
                   <a href="{{ child|url }}">{{ child.title }}</a>
                   {% if this.is_child_of(child) %}
