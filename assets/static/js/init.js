@@ -1,8 +1,8 @@
 ﻿jQuery(function($) {
+   // Toggle Sidedrawer
    /* from https://www.muicss.com/examples/v1/example-layouts/responsive-side-menu/index.html */
    var $bodyEl = $('body'),
       $sidedrawerEl = $('#sidedrawer');
-// Toggle Sidedrawer
    function showSidedrawer() {
       // show overlay
       var options = {
@@ -25,7 +25,7 @@
    $('.js-show-sidedrawer').on('click', showSidedrawer);
    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
 
-// Animate menu
+   // Animate menu
    var $titleEls = $('strong', $sidedrawerEl);
    $titleEls
       .next()
@@ -33,4 +33,5 @@
    $titleEls.on('click', function() {
       $(this).next().slideToggle(200);
    });
+   /* end Toggle Sidedrawer */
 });

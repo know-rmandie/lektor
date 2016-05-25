@@ -13,8 +13,10 @@
    <meta name="author" value="{{ this.author }}" />
    <meta name="keywords" value="{{ this.keywords }}" />
    <!-- styling -->
+   <link rel="stylesheet" href="{{ '/static/lib/font-awesome.css'|url }}" />
    <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
    <link rel="stylesheet" href="{{ '/static/css/style.css'|url }}" />
+   <link rel="stylesheet" href="{{ '/static/css/colors.css'|url }}" />
    {% block stylesheets %}{% endblock %}
    <!-- scripts -->
    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -45,7 +47,8 @@
          </li>
          {% endif %}
          <li>
-            <strong>know-rmandie</strong>
+            <strong>know-rmand
+               22 ie</strong>
             <ul>
                {% for path, label in bag('navigation').iteritems() %}
                   {% if this.is_child_of(path) %}
