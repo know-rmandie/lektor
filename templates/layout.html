@@ -40,7 +40,7 @@
             <strong><a href="{{ rubrique|url }}">{{ rubrique.title }}</a></strong>
             <ul style="display:none">
             {% endif %}
-            {% for child in child.children %}
+            {% for child in child.children recursive %}
                <li{% if this._path == child._path %} class="active"{% endif %}>
                   <a href="{{ child|url }}">{{ child.title }}</a>
                   {% if this.is_child_of(child) %}
