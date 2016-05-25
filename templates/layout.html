@@ -27,39 +27,30 @@
 
 <body class="hide-sidedrawerhide-sidedrawerhide-sidedrawer">
    <div id="sidedrawer" class="mui--no-user-select">
-      <div id="sidedrawer-brand" class="mui--appbar-line-height">know-rmandie</div>
+      <div id="sidedrawer-brand" class="mui--appbar-line-height"><a href="{{ root|url }}">{{ root|tit }}</div>
       <div class="mui-divider"></div>
-      <ul>
-         <!-- retour au parent -->
-         {% if this.parent %}
-         <li>
-            <a href="{{ this.parent|url }}">{{ this.parent.title }}</a>
-         </li>
-         {% endif %}
-         {% if this.children %}
-         <li>
-            <span>{{ this.title }}</span>
-            <ul>
-               {% for child in this.children %}
-                  <li><a href="{{ child|url }}">{{ child.title }}</a></li>
-               {% endfor %}
-            </ul>
-         </li>
-         {% endif %}
-         <li>
-            <strong>know-rmand
-               22 ie</strong>
-            <ul>
-               {% for path, label in bag('navigation').iteritems() %}
-                  {% if this.is_child_of(path) %}
-                  {% else %}
-                     <li><a href="{{ path|url }}">{{ label }}</a></li>
+         <ul>
+         <!-- essai de navigation récursive -->
+         {% set root = site.get('/') %}
+         {% for child in root.children %}
+            {% set rubrique = child %}
+            {% if this.is_child_of(child.path) %}
+            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
+            <ul style="display:block">
+            {% else %}
+            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
+            <ul style="display:none">
+            {% endif %}
+            {% for child in rubrique.children %}
+               <li{% if this._path == child._path %} class="active"{% endif %}>
+                  <a href="{{ child|url }}">{{ child.title }}</a>
+                  {% if this.is_child_of(child) %}
+                     <ul>{{ loop(child.children) }}</ul>
                   {% endif %}
-               {% endfor %}
+               </li>
+            {% endfor %}
             </ul>
-         </li>
-
-      </ul>
+         </ul>
     </div>
 
    <header id="header">

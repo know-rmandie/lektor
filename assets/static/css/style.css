@@ -1,15 +1,65 @@
-/**
- * Body CSS
- */
+/* L A Y O U T */
+html {
+  font-size:16px;
+  font-family:fantasy;
+}
 
 html,
 body {
   height: 100%;
 }
 
-/**
- * Layout CSS
- */
+#sidedrawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  left: -300px;
+  overflow: auto;
+  z-index: 2000;
+  transition: transform 0.2s;
+}
+
+#sidedrawer.active {
+  transform: translate(300px);
+}
+
+#sidedrawer-brand {
+  padding-left: 20px;
+}
+
+#sidedrawer ul {
+  list-style:none;
+}
+
+#sidedrawer > ul {
+  padding-left: 20px;
+}
+
+#sidedrawer > ul > li:first-child {
+  padding-top: 15px;
+}
+
+#sidedrawer strong {
+  display: block;
+  padding: 15px 22px;
+  cursor: pointer;
+}
+
+#sidedrawer strong + ul > li {
+  padding: 6px 0px;
+}
+
+.sidedrawer-toggle {
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 20px;
+  margin-right: 10px;
+}
+
+.sidedrawer-toggle:hover {
+  text-decoration: none;
+}
 
 #header {
   position: fixed;
@@ -20,49 +70,66 @@ body {
   transition: left 0.2s;
 }
 
-#sidedrawer {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  left: -200px;
-  overflow: auto;
-  z-index: 2;
-  transition: transform 0.2s;
-}
-
 #content-wrapper {
   min-height: 100%;
   overflow-x: hidden;
-  margin-left: 0px;
+  margin-left: 0;
   transition: margin-left 0.2s;
-
   /* sticky bottom */
-  margin-bottom: -160px;
-  padding-bottom: 160px;
+  margin-bottom: -40px;
+  padding:1em 2em 40px 2em;
 }
 
 #footer {
-  height: 160px;
+  height: 40px;
   margin-left: 0px;
+  padding:.5em 0;
   transition: margin-left 0.2s;
 }
 
-@media (min-width: 768px) {
+/* F O N T S */
+body * {
+  font-family:Tahoma;
+}
+#sidedrawer-brand {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#content-wrapper * {
+  font-size:1.25rem
+}
+
+#footer a {
+  text-decoration: underline;
+}
+
+li.fa {font-family:initial}
+
+li.fa:before {
+  font-family: fontAwesome;
+  display:inline-block;
+  text-align: center;
+  width:24px;
+  margin:0 .5em 0;
+}
+
+/* R E S P O N S I V E */
+@media (min-width: 900px) {
   #header {
-    left: 200px;
+    left: 300px;
   }
 
   #sidedrawer {
-    transform: translate(200px);
+    transform: translate(300px);
   }
 
   #content-wrapper {
-    margin-left: 200px;
+    margin-left: 300px;
   }
 
   #footer {
-    margin-left: 200px;
+    margin-left: 300px;
   }
 
   body.hide-sidedrawer #header {
@@ -80,73 +147,4 @@ body {
   body.hide-sidedrawer #footer {
     margin-left: 0;
   }
-}
-
-
-/**
- * Toggle Sidedrawer
- */
-#sidedrawer.active {
-  transform: translate(200px);
-}
-
-
-/**
- * Header CSS
- */
-
-.sidedrawer-toggle {
-  cursor: pointer;
-  font-size: 20px;
-  line-height: 20px;
-  margin-right: 10px;
-}
-
-.sidedrawer-toggle:hover {
-  text-decoration: none;
-}
-
-
-/**
- * Sidedrawer CSS
- */
-
-#sidedrawer-brand {
-  padding-left: 20px;
-  font-size: 20px;
-  font-weight: 400;
-}
-
-#sidedrawer ul {
-  list-style: none;
-}
-
-#sidedrawer > ul {
-  padding-left: 0px;
-}
-
-#sidedrawer > ul > li:first-child {
-  padding-top: 15px;
-}
-
-#sidedrawer strong {
-  display: block;
-  padding: 15px 22px;
-  cursor: pointer;
-}
-
-#sidedrawer strong:hover {
-}
-
-#sidedrawer strong + ul > li {
-  padding: 6px 0px;
-}
-
-
-/**
- * Footer CSS
- */
-
-#footer a {
-  text-decoration: underline;
 }

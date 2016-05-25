@@ -9,13 +9,14 @@ author: Sylvain Comte
 keywords: territoires,normandie,connaissance,outils,visualisation,cartographie,indicateurs,aménagement,urbanisme,ville durable,économie,consommation d'espace,dataviz,opensource,opendata
 ---
 body:
-Ce site maintenu par la [DREAL Normandie](http://www.normandie.developpement-durable.gouv.fr) sert de support pour le partage et la mise à disposition d'informations et données sur les territoires normands. 
+Ce site maintenu par la [DREAL Normandie](http://www.normandie.developpement-durable.gouv.fr) sert de support pour le partage et la mise à disposition d'informations et données sur les territoires normands.
 
 <ul>
-   <li class="fa-li fa fa-bar-chart"><span>Définition d'<a href="./I/ET">indicateurs économiques</a> pour le suivi des territoires</span></li>
-   <li class="fa-li fa fa-map-marker"><span>Carte des <a href="./planification">Schémas de COhérence Territoriale</a> et de leur avancement</span></li>
-   <li class="fa-li fa fa-folder-open"><span><a href="./urbanisme">Avancement des documents d'urbanisme</a> locaux</span></li>
-   <li class="fa-li fa fa-area-chart"><span><a href="./I/CE">Indicateurs de consommation</a> d'espace</span></li>
-   <li class="fa-li fa fa-map-marker"><span><a href="./ville-durable">Carte de la ville durable</a> en Normandie (et <a href="./ville-durable/France">des écoquartiers en France</a>)</span></li>
+   <li class="fa fa-bar-chart"><span>Définition d'<a href="./I/ET">indicateurs économiques</a> pour le suivi des territoires</span></li>
+   <li class="fa fa-map-marker"><span>Carte des <a href="./planification">Schémas de COhérence Territoriale</a> et de leur avancement</span></li>
+   <li class="fa fa-folder-open"><span><a href="./urbanisme">Avancement des documents d'urbanisme</a> locaux</span></li>
+   <li class="fa fa-area-chart"><span><a href="./I/CE">Indicateurs de consommation</a> d'espace</span></li>
+   <li class="fa fa-map-marker"><span><a href="./ville-durable">Carte de la ville durable</a> en Normandie (et <a href="./ville-durable/France">des écoquartiers en France</a>)</span></li>
+   <li class="fa fa-book"><span>< a href="./AGENor">Documentation d'AGENor</a>, outil de suivi des études en cours de développement</span></li>
 </ul>
 ---
