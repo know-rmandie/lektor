@@ -33,11 +33,11 @@
          <!-- essai de navigation récursive -->
          {% for child in root.children %}
             {% set rubrique = child %}
-            {% if this.is_child_of(child.path) %}
-            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
+            {% if this.is_child_of(rubrique._path) %}
+            <strong><a href="{{ rubrique|url }}">{{ rubrique.title }}</a></strong>
             <ul style="display:block">
             {% else %}
-            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
+            <strong><a href="{{ rubrique|url }}">{{ rubrique.title }}</a></strong>
             <ul style="display:none">
             {% endif %}
             {% for child in rubrique.children %}
