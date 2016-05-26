@@ -1,27 +1,27 @@
 /* L A Y O U T */
-html {
-  font-size:16px;
-  font-family:fantasy;
-}
 
 html,
 body {
   height: 100%;
 }
 
+ul {
+  padding:0 0 0 0;
+}
+
 #sidedrawer {
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 300px;
-  left: -300px;
+  width: 240px;
+  left: -240px;
   overflow: auto;
   z-index: 2000;
   transition: transform 0.2s;
 }
 
 #sidedrawer.active {
-  transform: translate(300px);
+  transform: translate(240px);
 }
 
 #sidedrawer-brand {
@@ -33,11 +33,15 @@ body {
 }
 
 #sidedrawer > ul {
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
-#sidedrawer > ul > li:first-child {
-  padding-top: 15px;
+#sidedrawer > ul ul {
+  padding-left: 40px;
+}
+
+#sidedrawer  ul > li:first-child {
+  padding-top:0;
 }
 
 #sidedrawer strong {
@@ -46,8 +50,12 @@ body {
   cursor: pointer;
 }
 
+#sidedrawer strong:active + ul {
+  display:block;
+}
+
 #sidedrawer strong + ul > li {
-  padding: 6px 0px;
+  padding: 2px 0px;
 }
 
 .sidedrawer-toggle {
@@ -65,9 +73,13 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  left: 0;
+  left: 0px;
   z-index: 2;
   transition: left 0.2s;
+}
+
+#header table td:first-child {
+  padding-left:20px;
 }
 
 #content-wrapper {
@@ -85,19 +97,33 @@ body {
   margin-left: 0px;
   padding:.5em 0;
   transition: margin-left 0.2s;
+  overflow:hidden;
 }
 
 /* F O N T S */
+html {
+  font-size:16px;
+  }
+
 body * {
-  font-family:Tahoma;
+  font-family:Roboto, Arial, Sans;
 }
+
 #sidedrawer-brand {
   font-size: 1.5rem;
   font-weight: 400;
 }
 
+#sidedrawer li {
+  font-size:.95em;
+}
+
 #content-wrapper * {
   font-size:1.25rem
+}
+
+#footer {
+  font-size:.9rem
 }
 
 #footer a {
@@ -115,21 +141,31 @@ li.fa:before {
 }
 
 /* R E S P O N S I V E */
+@media (min-width: 640px) {
+  ul {
+    padding:0 0 0 20px;
+  }
+}
+
 @media (min-width: 900px) {
+  ul {
+    padding:0 0 0 20px;
+  }
+
   #header {
-    left: 300px;
+    left: 240px;
   }
 
   #sidedrawer {
-    transform: translate(300px);
+    transform: translate(240px);
   }
 
   #content-wrapper {
-    margin-left: 300px;
+    margin-left: 240px;
   }
 
   #footer {
-    margin-left: 300px;
+    margin-left: 240px;
   }
 
   body.hide-sidedrawer #header {

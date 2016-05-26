@@ -13,7 +13,9 @@
    <meta name="author" value="{{ this.author }}" />
    <meta name="keywords" value="{{ this.keywords }}" />
    <!-- styling -->
+   <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Open+Sans%3A400italic%2C400%2C600%2C700%7CRoboto+Slab%3A400%2C300%2C700&#038;ver=4.5.2' type='text/css' media='all' />
    <link rel="stylesheet" href="{{ '/static/lib/font-awesome.css'|url }}" />
+
    <link href="//cdn.muicss.com/mui-latest/css/mui.min.css" rel="stylesheet" type="text/css" />
    <link rel="stylesheet" href="{{ '/static/css/style.css'|url }}" />
    <link rel="stylesheet" href="{{ '/static/css/colors.css'|url }}" />
@@ -28,7 +30,7 @@
 <body class="hide-sidedrawerhide-sidedrawerhide-sidedrawer">
    <div id="sidedrawer" class="mui--no-user-select">
       <div id="sidedrawer-brand" class="mui--appbar-line-height"><a href="{{ root|url }}">{{ root.title }}</div>
-      <!-- essai de menu récursif -->   
+      <!-- menu récursif -->
       <ul>
       {% for child in root.children recursive %}
          {% if child.parent._path == root._path %}
@@ -63,13 +65,13 @@
                </td>
                <td class="mui--text-right">
                   <div id="appbar-project" class="mui--hidden-xs">
-                     {% for path, label in bag('navigation').iteritems() %}
-                        {% if this.is_child_of(path) %}
-                           <mui-btn color="accent" align="right" disabled>{{ label }}</mui-btn>
-                        {% else %}
-                           <mui-btn color="primary" align="right"><a href="{{ path|url }}">{{ label }}</a></mui-btn>
-                        {% endif %}
-                     {% endfor %}
+                  <!-- tentative de miettes de pain -->
+                  {% for child in root.children recursive %}
+                     {% if this.is_child_of(child) %}
+                        &nbsp;>&nbsp;<a href="{{ child|url }}">{{ child.title }}</a>
+                        {{ loop(child.children) }}
+                     {% endif %}
+                  {% endfor %}
                   </div>
                </td>
             </tr>

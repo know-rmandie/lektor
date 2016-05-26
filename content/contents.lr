@@ -17,6 +17,6 @@ Ce site maintenu par la [DREAL Normandie](http://www.normandie.developpement-dur
    <li class="fa fa-folder-open"><span><a href="./urbanisme">Avancement des documents d'urbanisme</a> locaux</span></li>
    <li class="fa fa-area-chart"><span><a href="./I/CE">Indicateurs de consommation</a> d'espace</span></li>
    <li class="fa fa-map-marker"><span><a href="./ville-durable">Carte de la ville durable</a> en Normandie (et <a href="./ville-durable/France">des écoquartiers en France</a>)</span></li>
-   <li class="fa fa-book"><span>< a href="./AGENor">Documentation d'AGENor</a>, outil de suivi des études en cours de développement</span></li>
+   <li class="fa fa-book"><span>< a href="http://know-rmandie.gitlab.io/AGENor">Documentation d'AGENor</a>, outil de suivi des études en cours de développement</span></li>
 </ul>
 ---
