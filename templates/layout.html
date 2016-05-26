@@ -42,11 +42,12 @@
                   <ul style="display:none">
                {% endif %}
             {% else %}
+            {% endif %}
+         {% else %}
             <li{% if this._path == child._path %} class="active"{% endif %}>
-               <a href="{{ child|url }}">{{ child.title }}</a>
-               {% if this.is_child_of(child) %}
-                  <ul>{{ loop(child.children) }}</ul>
-               {% endif %}
+               <a href="{{ child|url }}">{{ child.title }}</a></li>
+            {% if this.is_child_of(child) %}
+               <ul>{{ loop(child.children) }}</ul>
             {% endif %}
          {% endif %}
       {% endfor %}
