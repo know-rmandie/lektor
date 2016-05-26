@@ -34,7 +34,7 @@
       {% for child in root.children recursive %}
          {% if child.parent._path == root._path %}
             {% if child.has_prev() %}</ul>{% endif %}
-            {% if this.is_child_of(path) %}
+            {% if this.is_child_of(child) %}
                <strong class="active"><a href="{{ child|url }}">{{ child.title }}</a></strong>
                <ul style="display:block">
             {% else %}
@@ -49,6 +49,7 @@
             {% endif %}
          {% endif %}
       {% endfor %}
+         </ul>
       </ul>
    </div>
 
