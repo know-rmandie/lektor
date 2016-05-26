@@ -28,12 +28,11 @@
 <body class="hide-sidedrawerhide-sidedrawerhide-sidedrawer">
    <div id="sidedrawer" class="mui--no-user-select">
       <div id="sidedrawer-brand" class="mui--appbar-line-height"><a href="{{ root|url }}">{{ root.title }}</div>
-
+      <!-- essai de menu récursif -->   
       <ul>
       {% for child in root.children recursive %}
          {% if child.parent._path == root._path %}
             {% if child._path != root._path %}
-               {% if child.has_prev() %}</ul>{% endif %}
                {% if this.is_child_of(child) %}
                   <strong class="active"><a href="{{ child|url }}">{{ child.title }}</a></strong>
                   <ul style="display:block">{{ loop(child.children) }}</ul>
@@ -51,7 +50,6 @@
             {% endif %}
          {% endif %}
       {% endfor %}
-         </ul>
       </ul>
    </div>
 
