@@ -62,16 +62,21 @@
                <td>
                   <a class="sidedrawer-toggle mui--visible-xs-inline-block mui--visible-sm-inline-block js-show-sidedrawer">☰</a>
                   <a class="sidedrawer-toggle mui--hidden-xs mui--hidden-sm js-hide-sidedrawer">☰</a>
-               </td>
-               <td class="">
-                  <div id="appbar-project" class="mui--hidden-xs">
                   <!-- tentative de miettes de pain -->
                   {% for child in root.children recursive %}
                      {% if this.is_child_of(child) %}
+                        {% if this._url == child._url %}
+                        &nbsp;>&nbsp;<h1>{{ child.title }}</h1>
+                        {% else %}
                         &nbsp;>&nbsp;<a href="{{ child|url }}">{{ child.title }}</a>
+                        {% endif %}
                         {{ loop(child.children) }}
                      {% endif %}
                   {% endfor %}
+               </td>
+               <td class="">
+                  <div id="appbar-project" class="mui--hidden-xs">
+
                   </div>
                </td>
             </tr>

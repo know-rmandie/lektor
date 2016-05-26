@@ -11,12 +11,10 @@ keywords: territoires,normandie,connaissance,outils,visualisation,cartographie,i
 body:
 Ce site maintenu par la [DREAL Normandie](http://www.normandie.developpement-durable.gouv.fr) sert de support pour le partage et la mise à disposition d'informations et données sur les territoires normands.
 
-<ul>
-   <li class="fa fa-bar-chart"><span>Définition d'<a href="./I/ET">indicateurs économiques</a> pour le suivi des territoires</span></li>
-   <li class="fa fa-map-marker"><span>Carte des <a href="./planification">Schémas de COhérence Territoriale</a> et de leur avancement</span></li>
-   <li class="fa fa-folder-open"><span><a href="./urbanisme">Avancement des documents d'urbanisme</a> locaux</span></li>
-   <li class="fa fa-area-chart"><span><a href="./I/CE">Indicateurs de consommation</a> d'espace</span></li>
-   <li class="fa fa-map-marker"><span><a href="./ville-durable">Carte de la ville durable</a> en Normandie (et <a href="./ville-durable/France">des écoquartiers en France</a>)</span></li>
-   <li class="fa fa-book"><span>< a href="{{ "http://know-rmandie.gitlab.io/AGENor"|url }}">Documentation d'AGENor</a>, outil de suivi des études en cours de développement</span></li>
-</ul>
----
+* Définition d'[indicateurs] pour le suivi des territoires
+    * [indicateurs économiques](./I/ET)
+    * [Indicateurs de consommation d'espace](./I/CE)
+* Carte des [Schémas de COhérence Territoriale](./planification) et de leur avancement
+* Analyse de l'[avancement des documents d'urbanisme](./urbanisme) locaux
+* Carte de la [ville durable en Normandie](./ville-durable) (et aussi en guise de test celle des [écoquartiers en France](./ville-durable/France))
+* [Documentation d'AGENor](./AGENor) (Application de Gestion des Etudes Normandie) en cours de développement

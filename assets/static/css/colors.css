@@ -13,11 +13,7 @@ buttons  {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
 }
 
-#sidedrawer  {
-  background-color: #fff;
-}
-
-a {
+strong, a {
   color:#009688
 }
 
@@ -26,12 +22,26 @@ a:hover {
   opacity:0.79;
 }
 
-#header, #header a, #footer, #footer a, .sidedrawer-toggle, .sidedrawer-toggle:hover  {
+#sidedrawer {
+  background-color: #fff;
+}
+
+#header, #header a,
+#footer, #footer a,
+.sidedrawer-toggle, .sidedrawer-toggle:hover  {
   color: #fff;
+}
+
+#sidedrawer strong, #sidedrawer a {
+  color: black;
 }
 
 #sidedrawer strong:hover  {
   background-color: #E0E0E0;
+}
+
+#sidedrawer .active a {
+  color:#009688 !important;
 }
 
 #header,

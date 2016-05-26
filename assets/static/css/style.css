@@ -106,7 +106,7 @@ html {
   }
 
 body * {
-  font-family: Arial, Sans;
+  font-family: Roboto, Arial, Sans;
 }
 
 #sidedrawer-brand {
@@ -148,10 +148,6 @@ li.fa:before {
 }
 
 @media (min-width: 900px) {
-  ul {
-    padding:0 0 0 20px;
-  }
-
   #header {
     left: 240px;
   }
