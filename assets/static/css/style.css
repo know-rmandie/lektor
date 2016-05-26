@@ -36,17 +36,17 @@ body {
   padding-left: 20px;
 }
 
-#sidedrawer > ul > li > ul > li:first-child {
+#sidedrawer > ul > li:first-child {
   padding-top: 15px;
 }
 
-#sidedrawer > ul > li {
+#sidedrawer strong {
   display: block;
   padding: 15px 22px;
   cursor: pointer;
 }
 
-#sidedrawer > ul > li + ul > li {
+#sidedrawer strong + ul > li {
   padding: 6px 0px;
 }
 

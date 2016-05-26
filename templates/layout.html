@@ -29,37 +29,51 @@
    <div id="sidedrawer" class="mui--no-user-select">
       <div id="sidedrawer-brand" class="mui--appbar-line-height"><a href="{{ root|url }}">{{ root.title }}</div>
       <div class="mui-divider"></div>
-         <ul>
-         <!-- essai de navigation récursive
-         {% for path, label in bag('navigation').iteritems() %}
+      <ul>
+      <!-- essai de navigation récursive -->
+      {% for item,path,label in bag('navigation').iteritems() %}
+         {% if this.is_child_of(path) %}
+         <strong><a href="{{ path|url }}">{{ label }}</a></strong>
+         <ul style="display:block">
+         {% else %}
+         <strong><a href="{{ path|url }}">{{ label }}</a></strong>
+         <ul style="display:none">
+         {% endif %}
+         {% for child in item.children recursive %}
+            <li{% if this._path == child._path %} class="active"{% endif %}>
+               <a href="{{ child|url }}">{{ child.title }}</a>
+               {% if this.is_child_of(child) %}
+                  <ul>{{ loop(child.children) }}</ul>
+               {% endif %}
+            </li>
+         {% endfor %}
+         </ul>
+      {% endfor %}
+      </ul>
+      <div class="mui-divider"></div>
+      <ul>
+      {% for child in root.children recursive %}
+         {% if child.parent._path == root._path %}
+            {% if child.has_prev %}</ul>{% endif %}
             {% if this.is_child_of(path) %}
-            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
-            <ul style="display:block">
+               <strong class="active"><a href="{{ child|url }}">{{ child.title }}</a></strong>
+               <ul style="display:block">
             {% else %}
-            <strong><a href="{{ path|url }}">{{ label }}</a></strong>
-            <ul style="display:none">
+               <strong><a href="{{ child|url }}">{{ child.title }}</a></strong>
+               <ul style="display:none">
             {% endif %}
-            {% for child in path.children recursive %}
-               <li{% if this._path == child._path %} class="active"{% endif %}>
-                  <a href="{{ child|url }}">{{ child.title }}</a>
-                  {% if this.is_child_of(child) %}
-                     <ul>{{ loop(child.children) }}</ul>
-                  {% endif %}
-               </li>
-            {% endfor %}
-            </ul>
-         {% endfor %} -->
-         {% for child in root.children recursive %}
+         {% else %}
          <li{% if this._path == child._path %} class="active"{% endif %}>
             <a href="{{ child|url }}">{{ child.title }}</a>
             {% if this.is_child_of(child) %}
                <ul>{{ loop(child.children) }}</ul>
             {% endif %}
-         {% endfor %}
-         </ul>
-    </div>
+         {% endif %}
+      {% endfor %}
+      </ul>
+   </div>
 
-   <header id="header">
+   <header id="header" class="header-shadow">
       <table width="100%">
          <tbody>
             <tr class="mui-appbar mui--appbar-height">
