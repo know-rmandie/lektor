@@ -30,7 +30,7 @@
       <div id="sidedrawer-brand" class="mui--appbar-line-height"><a href="{{ root|url }}">{{ root.title }}</div>
       <div class="mui-divider"></div>
          <ul>
-         <!-- essai de navigation récursive -->
+         <!-- essai de navigation récursive
          {% for path, label in bag('navigation').iteritems() %}
             {% if this.is_child_of(path) %}
             <strong><a href="{{ path|url }}">{{ label }}</a></strong>
@@ -48,6 +48,13 @@
                </li>
             {% endfor %}
             </ul>
+         {% endfor %} -->
+         {% for child in root.children recursive %}
+         <li{% if this._path == child._path %} class="active"{% endif %}>
+            <a href="{{ child|url }}">{{ child.title }}</a>
+            {% if this.is_child_of(child) %}
+               <ul>{{ loop(child.children) }}</ul>
+            {% endif %}
          {% endfor %}
          </ul>
     </div>
