@@ -36,10 +36,10 @@
                {% if child.has_prev() %}</ul>{% endif %}
                {% if this.is_child_of(child) %}
                   <strong class="active"><a href="{{ child|url }}">{{ child.title }}</a></strong>
-                  <ul style="display:block">
+                  <ul style="display:block">{{ loop(child.children) }}</ul>
                {% else %}
                   <strong><a href="{{ child|url }}">{{ child.title }}</a></strong>
-                  <ul style="display:none">
+                  <ul style="display:none">{{ loop(child.children) }}</ul>
                {% endif %}
             {% else %}
             {% endif %}
