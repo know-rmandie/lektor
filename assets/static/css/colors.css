@@ -22,6 +22,8 @@ a:hover {
   opacity:0.79;
 }
 
+pre, code {background-color: #888;color:#b2dfdb;border-radius:2px;}
+
 #sidedrawer {
   background-color: #fff;
 }
