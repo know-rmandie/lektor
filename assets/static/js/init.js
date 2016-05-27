@@ -39,8 +39,8 @@
 	getWidth=function(usage) {
 		switch(usage) {
 			case 'map' :
-				rW=$('#content-wrapper').width()-10;
-				rH=$(window).height()-240;
+				rW=$('#content-wrapper').width();
+				rH=$(window).height()-111;
 				break;
 			case 'graph' :
 				rW=$('#content-wrapper').width();

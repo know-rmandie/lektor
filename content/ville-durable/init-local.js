@@ -23,14 +23,12 @@ $.getJSON("./data-normandie-hr.geojson", function(data) {
 
     function letsStart() {
         if (document.location.href.match(/carteSeule/g)) {
-            context =
-                "full";
-            $("#header,#footer,h2").css("display", "none");
-            $("#main, #page").css("width", "100%");
-            $("#page").css("max-width", "none");
-            $("#main, #page").css("margin", "0");
-            $("#main, #page").css("padding", "0")
-        }
+            context = "full";
+            $("#header,#footer,#sidedrawer").css("display", "none");
+            $("#content-wrapper").css("width", "100%");
+            $("#content-wrapper").css("margin", "0");
+           }
+        $("#content-wrapper").css("padding", "0")
         $(window).resize(function() {
             clearTimeout(window.resizedFinished);
             window.resizedFinished = setTimeout(function() {
@@ -84,17 +82,17 @@ $.getJSON("./data-normandie-hr.geojson", function(data) {
         for (i in Labellisation) {
             var url = Labellisation[i].icone + ".png";
             PinCat[Labellisation[i].id] = L.icon({
-                iconUrl: "./img/" + url,
-                iconRetinaUrl: "./img/" + url,
+                iconUrl: "" + url,
+                iconRetinaUrl: "" + url,
                 iconSize: [20, 38],
                 iconAnchor: [15, 38],
                 popupAnchor: [-5, -39],
-                shadowUrl: "./img/la-ombre.png",
-                shadowRetinaUrl: "./img/la-ombre.png",
+                shadowUrl: "la-ombre.png",
+                shadowRetinaUrl: "la-ombre.png",
                 shadowSize: [40, 20],
                 shadowAnchor: [0, 20]
             });
-            HtmlLeg["Labellisation"] += '<img src="./img/' + url + '" style="height:16px"/>&nbsp;' + Labellisation[i].string + "<br/>"
+            HtmlLeg["Labellisation"] += '<img src="' + url + '" style="height:16px"/>&nbsp;' + Labellisation[i].string + "<br/>"
         }
         HtmlLeg["Labellisation"] += "</div>";
         var Avancement = [{
@@ -130,17 +128,17 @@ $.getJSON("./data-normandie-hr.geojson", function(data) {
         for (i in Avancement) {
             var url = Avancement[i].icone + ".png";
             PinAv[Avancement[i].id] = L.icon({
-                iconUrl: "./img/" + url,
-                iconRetinaUrl: "./img/" + url,
+                iconUrl: "" + url,
+                iconRetinaUrl: "" + url,
                 iconSize: [29, 37],
                 iconAnchor: [20, 37],
                 popupAnchor: [-6, -32],
-                shadowUrl: "./img/av-ombre.png",
-                shadowRetinaUrl: "./img/av-ombre.png",
+                shadowUrl: "av-ombre.png",
+                shadowRetinaUrl: "av-ombre.png",
                 shadowSize: [37, 23],
                 shadowAnchor: [0, 20]
             });
-            HtmlLeg["Avancement"] += '<img src="./img/' + url + '" style="height:20px"/>&nbsp;' + Avancement[i].string + "<br/>"
+            HtmlLeg["Avancement"] += '<img src="' + url + '" style="height:20px"/>&nbsp;' + Avancement[i].string + "<br/>"
         }
         HtmlLeg["Avancement"] += "</div>";
         var ecoQlabel = L.markerClusterGroup({
