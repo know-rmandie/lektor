@@ -34,4 +34,33 @@
       $(this).next().slideToggle(200);
    });
    /* end Toggle Sidedrawer */
+
+   /* function that get width of #main element */
+	getWidth=function(usage) {
+		switch(usage) {
+			case 'map' :
+				rW=$('#content-wrapper').width()-10;
+				rH=$(window).height()-240;
+				break;
+			case 'graph' :
+				rW=$('#content-wrapper').width();
+				rH=rW/2;
+				break;
+			case 'full' :
+				rW=$('#content-wrapper').width();
+				rH=$(window).height();
+				break;
+			/*case 'illus' :
+				rW=$('#main').width();
+				if(rW>730) rW=rW/2;
+				rH=rW/2;
+				if(rWi==null) rWi=rW;
+				break;*/
+			default :
+				rW=$('#content-wrapper').width();
+				rH=$(window).height();
+				if(rW0==null) rW0=rW;
+			}
+	}
+   /* end of getWidth tool */
 });
