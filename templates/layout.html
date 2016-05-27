@@ -50,12 +50,12 @@
             <li{% if this._path == child._path %} class="active"{% endif %}>
                <a href="{{ child|url }}">{{ child.title }}</a></li>
             {% if this.is_child_of(child) %}
-               {% if this.has_child() %}
+               {% if child.children %}
                   <ul>{{ loop(child.children) }}</ul>
                {% endif %}
             {% else %}
-               {% if this.has_child() %}
-                  <ul>{{ loop(child.children) }}</ul>
+               {% if child.children %}
+                  <ul class="pasTrop">{{ loop(child.children) }}</ul>
                {% endif %}
             {% endif %}
          {% endif %}
