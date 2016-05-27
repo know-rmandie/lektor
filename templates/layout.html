@@ -32,7 +32,6 @@
       <div id="sidedrawer-brand" class="mui--appbar-line-height"><a href="{{ root|url }}">{{ root.title }}</div>
       <!-- menu récursif -->
       <ul>
-      {% set count = 0 %}
       {% for child in root.children recursive %}
          {% if child.parent._path == root._path %}
             {% if child._path != root._path %}
@@ -55,11 +54,8 @@
                   <ul>{{ loop(child.children) }}</ul>
                {% endif %}
             {% else %}
-               {% count = count+1 %}
-               {% if count<3 %}
-                  {% if this.has_child() %}
-                     <ul>{{ loop(child.children) }}</ul>
-                  {% endif %}
+               {% if this.has_child() %}
+                  <ul>{{ loop(child.children) }}</ul>
                {% endif %}
             {% endif %}
          {% endif %}
