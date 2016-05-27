@@ -27,9 +27,9 @@
 
    // Animate menu
    var $titleEls = $('strong', $sidedrawerEl);
-   $titleEls
+   /*$titleEls
       .next()
-      .hide();
+      .hide();*/
    $titleEls.on('click', function() {
       $(this).next().slideToggle(200);
    });
