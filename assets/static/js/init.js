@@ -40,7 +40,7 @@
 		switch(usage) {
 			case 'map' :
 				rW=$('#content-wrapper').width();
-				rH=$(window).height()-111;
+				rH=$(window).height()-90;
 				break;
 			case 'graph' :
 				rW=$('#content-wrapper').width();
