@@ -24,7 +24,7 @@ $.getJSON("./data-normandie-hr.geojson", function(data) {
     function letsStart() {
         if (document.location.href.match(/carteSeule/g)) {
             context = "full";
-            $("#header,#footer,#sidedrawer").css("display", "none");
+            $("#header,#footer,#sidedrawer,.mui--appbar-height").css("display", "none");
             $("#content-wrapper").css("width", "100%");
             $("#content-wrapper").css("margin", "0");
            }
@@ -258,7 +258,7 @@ $.getJSON("./data-normandie-hr.geojson", function(data) {
                 attribution: "&copy; IGN 2014"
             });
             Couches["RgeIgn"] = RgeIgn;
-            tiles["IGN (r\u00e9seau i\u00b2)"] = RgeIgn;
+            tiles["IGN (réseau i²)"] = RgeIgn;
             var selecteur1 = L.control.layers(tiles);
             selecteur1.addTo(carte);
             var selecteur2 = L.control.layers(couchesControl);

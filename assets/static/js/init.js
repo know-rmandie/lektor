@@ -24,6 +24,7 @@
    }
    $('.js-show-sidedrawer').on('click', showSidedrawer);
    $('.js-hide-sidedrawer').on('click', hideSidedrawer);
+   hideSidedrawer();
 
    // Animate menu
    var $titleEls = $('strong', $sidedrawerEl);
