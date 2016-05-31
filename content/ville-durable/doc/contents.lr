@@ -11,7 +11,7 @@ body:
 ## Proposer des projets ou des corrections
 La carte de l'atlas de la ville durable en Normandie est établie sur la base des données renseignées par nos services. Il peut y avoir des erreurs à corriger ou des mises à jour nécessaires. Il n'est pas en général possible de procéder directement à ces mises à jour, mais il y a de multiples possibilités pour en proposer.
 
-Vous pouvez facilement utiliser l'outil d'envoi de commentaires inclu au pied de la carte <i class="fa fa-bug"></i>. Votre proposition viendra prendre place dans la liste des [sujets à traiter](https://framagit.org/know-rmandie/know-rmandie-gitlab-io/issues?scope=all&sort=id_desc&utf8=%E2%9C%93&label_name[]=ville-durable).
+Vous pouvez facilement utiliser l'outil d'envoi de commentaires inclu au pied de la carte <i class="fa fa-comment"></i>. Votre proposition viendra prendre place dans la liste des [sujets à traiter](https://framagit.org/know-rmandie/know-rmandie-gitlab-io/issues?scope=all&sort=id_desc&utf8=%E2%9C%93&label_name[]=ville-durable).
 
 La donnée utilisée est un fichier au format `geojson` à retrouver sur le dépôt de l'outil know-rmandie : [data-normandie-hr.geojson](https://framagit.org/sycom/know-rmandie-gitlab-io/blob/master/content/ville-durable/data-normandie-hr.geojson). En créant un compte sur le dépôt (c'est facile à faire et peut également se faire en utilisant un compte github ou gitlab) il est possible :
 
