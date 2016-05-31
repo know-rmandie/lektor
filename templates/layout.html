@@ -104,7 +104,8 @@
 
    <footer id="footer">
       <div class="mui-container-fluid">
-        {{ this.modified }} - <a href="http://normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - <a class="fa fa-code-fork fa-inverse" href="https://gitlab.com/sycom/post-Gitlab-issues" title="source code" alt="source"></a>
+        {{ this.modified }} - <a href="http://normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - <a href="https://framagit.org/know-rmandie/know-rmandie-gitlab-io" title="source code"><i class="fa fa-code-fork fa-inverse"  alt="source"></i></a>
+        {% block footer %}{% endblock %}
       </div>
    </footer>
 
