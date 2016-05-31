@@ -35,12 +35,12 @@
    });
    /* end Toggle Sidedrawer */
 
-   /* function that get width of #main element */
+   /* function that get width of #content-wrapper element */
 	getWidth=function(usage) {
 		switch(usage) {
 			case 'map' :
 				rW=$('#content-wrapper').width();
-				rH=$(window).height()-90;
+				rH=$(window).height()-104;
 				break;
 			case 'graph' :
 				rW=$('#content-wrapper').width();
