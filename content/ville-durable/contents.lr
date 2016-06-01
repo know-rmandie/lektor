@@ -9,5 +9,5 @@ modified: 2016-05-31
 author: Sylvain Comte
 ---
 footer:
-&nbsp;<span class="fa fa-comment fa-inverse pgiButton"></span>
+&nbsp;<i class="fa fa-comment fa-inverse pgiButton"></i>
 ---

@@ -97,14 +97,14 @@
     <div id="content-wrapper">
       <div class="mui--appbar-height"></div>
       <div class="mui-container-fluid">
-        {% block body %}{% endblock %}
+        {% block body %}{{ this.body }}{% endblock %}
       </div>
-        {% block special %}{% endblock %}
+        {% block special %}{{ this.special }}{% endblock %}
     </div>
 
    <footer id="footer">
       <div class="mui-container-fluid">
-        {{ this.modified }} - <a href="http://normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - <a href="https://framagit.org/know-rmandie/know-rmandie-gitlab-io" title="source code"><i class="fa fa-code-fork fa-inverse"  alt="source"></i></a> {% block footer %}{% endblock %}
+        {{ this.modified }} - <a href="http://normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - <a href="https://framagit.org/know-rmandie/know-rmandie-gitlab-io" title="source code"><i class="fa fa-code-fork fa-inverse"  alt="source"></i></a> {% block footer %}{{ this.footer }}{% endblock %}
       </div>
    </footer>
 

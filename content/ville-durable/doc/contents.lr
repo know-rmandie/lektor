@@ -7,7 +7,7 @@ modified: 2016-05-31
 author: Sylvain Comte
 ---
 footer:
-&nbsp;<span class="fa fa-comment fa-inverse pgiButton"></span>
+&nbsp;<i class="fa fa-comment fa-inverse pgiButton"></i>
 ---
 body:
 ## Proposer des projets ou des corrections
@@ -30,8 +30,8 @@ Il est possible d'insérer la carte sur son site internet avec le code suivant
 Vous pouvez bien sur modifier la hauteur de la visualisation et sa largeur en modifiant les paramètres `width` et `height` ci-dessus.
 
 ## Vous faites partie du comité technique
-Pour les agents concernés de la DREAL ou des DDT(M) concernées, il est possible d'accéder directement à [la base de données complète des écoquartiers sur le drive](https://docs.google.com/spreadsheets/d/1lybcyHklnN4y_bhH5zRWUhpAJx9AvYdzzw_HphBIT8U) (un compte Google est nécessaire. Désolé)
+Pour les agents de la DREAL ou des DDT(M) concernées, il est possible d'accéder directement à [la base de données complète des écoquartiers sur le drive](https://docs.google.com/spreadsheets/d/1lybcyHklnN4y_bhH5zRWUhpAJx9AvYdzzw_HphBIT8U) (un compte Google est nécessaire, Désolé)
 
-Si vous souhaitez que les modifications soient rapidement prises en compte, signalez que vous avez fait des modifications en envoyant un mail au propriétaire du tableau ("Fichier / envoyer un e-mail aux collaborateurs...")
+Si vous souhaitez que les modifications soient rapidement prises en compte, signalez que vous avez fait des modifications en envoyant un mail au propriétaire du tableau ("_Fichier / envoyer un e-mail aux collaborateurs..._")
 
 Lors de la consultation, en ajoutant `&mot-clé` (celui-ci étant le mot-clé qui vous a été fourni par ailleurs), vous pouvez également accéder à la "vue administrateur" qui permet de voir les projets abandonnés ou non validés ou de modifier la couche de fond.
