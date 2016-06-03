@@ -9,11 +9,16 @@ author: Sylvain Comte
 footer:
 &nbsp;<i class="fa fa-comment fa-inverse pgiButton"></i>
 ---
+pgi: true
+---
 body:
+## A propos
+L'atlas de la ville durable, initié par la DREAL Normandie a vocation à accueillir l'ensemble des projets se rapportant à la ville durable. C'est un outil complémentaire du document de référence que constitue le [référentiel "Vers des quartiers durables, pistes pour agir"].
+
 ## Proposer des projets ou des corrections
 La carte de l'atlas de la ville durable en Normandie est établie sur la base des données renseignées par nos services. Il peut y avoir des erreurs à corriger ou des mises à jour nécessaires. Il n'est pas en général possible de procéder directement à ces mises à jour, mais il y a de multiples possibilités pour en proposer.
 
-Vous pouvez facilement utiliser l'outil d'envoi de commentaires inclu au pied de la carte <i class="fa fa-comment"></i>. Votre proposition viendra prendre place dans la liste des [sujets à traiter](https://framagit.org/know-rmandie/know-rmandie-gitlab-io/issues?scope=all&sort=id_desc&utf8=%E2%9C%93&label_name[]=ville-durable).
+Vous pouvez facilement utiliser l'outil d'envoi de commentaires inclu au pied de la carte <i class="fa fa-comment pgiButton"></i>. Votre proposition viendra prendre place dans la liste des [sujets à traiter](https://framagit.org/know-rmandie/know-rmandie-gitlab-io/issues?scope=all&sort=id_desc&utf8=%E2%9C%93&label_name[]=ville-durable).
 
 La donnée utilisée est un fichier au format `geojson` à retrouver sur le dépôt de l'outil know-rmandie : [data-normandie-hr.geojson](https://framagit.org/sycom/know-rmandie-gitlab-io/blob/master/content/ville-durable/data-normandie-hr.geojson). En créant un compte sur le dépôt (c'est facile à faire et peut également se faire en utilisant un compte github ou gitlab) il est possible :
 
@@ -35,3 +40,5 @@ Pour les agents de la DREAL ou des DDT(M) concernées, il est possible d'accéde
 Si vous souhaitez que les modifications soient rapidement prises en compte, signalez que vous avez fait des modifications en envoyant un mail au propriétaire du tableau ("_Fichier / envoyer un e-mail aux collaborateurs..._")
 
 Lors de la consultation, en ajoutant `&mot-clé` (celui-ci étant le mot-clé qui vous a été fourni par ailleurs), vous pouvez également accéder à la "vue administrateur" qui permet de voir les projets abandonnés ou non validés ou de modifier la couche de fond.
+
+[référentiel de la ville durable]: http://normandie.developpement-durable.gouv.fr/referentiel-vers-des-quartiers-durables-pistes-a208.html

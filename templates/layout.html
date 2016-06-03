@@ -23,6 +23,10 @@
    <!-- scripts -->
    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
    <script src="//cdn.muicss.com/mui-latest/js/mui.min.js"></script>
+   {{% if this.pgi %}}
+   <script src="{{ '/static/lib/pgi.js'|url }}"></script>
+   <script src="./pgi_config.js"></script>
+   {{% endif %}}
    <script src="{{ '/static/js/init.js'|url }}"></script>
    {% block scripts %}{% endblock %}
 </head>
@@ -104,7 +108,7 @@
 
    <footer id="footer">
       <div class="mui-container-fluid">
-        {{ this.modified }} - <a href="http://normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - <a href="https://framagit.org/know-rmandie/know-rmandie-gitlab-io" title="source code"><i class="fa fa-code-fork fa-inverse"  alt="source"></i></a> {% block footer %}{{ this.footer }}{% endblock %}
+        {{ this.modified }} - <a href="http://normandie.developpement-durable.gouv.fr">DREAL Normandie</a> - <a href="https://framagit.org/know-rmandie/know-rmandie-gitlab-io" title="code source"><i class="fa fa-code-fork fa-inverse"  alt="source"></i></a> {{% if this.pgi %}}&nbsp;<i class="fa fa-comment fa-inverse pgiButton"></i>{{% endif %}}&nbsp;{% block footer %}{{ this.footer }}{% endblock %}
       </div>
    </footer>
 

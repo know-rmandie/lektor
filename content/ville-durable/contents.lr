@@ -8,6 +8,5 @@ modified: 2016-05-31
 ---
 author: Sylvain Comte
 ---
-footer:
-&nbsp;<i class="fa fa-comment fa-inverse pgiButton"></i>
+pgi: true
 ---

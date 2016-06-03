@@ -113,6 +113,10 @@ img {max-width:100%}
   overflow:hidden;
 }
 
+#footer p {
+   display:inline-block;
+}
+
 /* F O N T S */
 html {
   font-size:16px;
