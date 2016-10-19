@@ -7,19 +7,22 @@ Know-rmandie est un projet initié par la [DREAL Normandie]. Il comporte des out
 
 # Sources licences
 * **Pour le code**, l'outil s'appuie sur :
- * [lektor] - [Licence](https://github.com/lektor/lektor/blob/master/LICENSE) MIT?
- * [jQuery] - Licence MIT
- * [leaflet] - Licence 2-clause BSD, et son extension [markerCluster] - Licence MIT
- * [MUIcss] - Licence MIT
- * [Font Awesome] - Licence SIL OFL 1.1 (police) et MIT (code)
+ * [lektor][lektor] - [Licence](https://github.com/lektor/lektor/blob/master/LICENSE) MIT?
+ * [jQuery][jQuery] - Licence MIT
+ * [leaflet][leaflet] - Licence 2-clause BSD, et son extension [markerCluster] - Licence MIT
+ * [MUIcss][MUIcss] - Licence MIT
+ * [Font Awesome][Font Awesome] - Licence SIL OFL 1.1 (police) et MIT (code)
  * [post Gitlab issues][pGi] - Licence MIT
 * **Pour les données** :
- * [GeoFLA] de l'IGN - [Licence ouverte]
- * [OpenStreetMap] - Licence ODbL. Il est possible d'utiliser les traitements graphiques de ESRI, Stamen Design...
+ * [GeoFLA][GeoFLA] de l'IGN - [Licence ouverte]
+ * [OpenStreetMap][OpenStreetMap] - Licence ODbL. Il est possible d'utiliser les traitements graphiques de ESRI, Stamen Design...
  * Observatoire normand de la ville durable (données publiques - DREAL Normandie)
  * Données du ministère du développement durable (DGALN / AD4)
 
- Les développements réalisés dans le cadre du projet sont sous licence [EUPL]
+ Les développements réalisés dans le cadre du projet sont sous licence [EUPL][EUPL]
+
+ ## parcours
+ Actuellement en phase de test, le projet est déployé via gitlab et envoyé sur framagit pour la gestion des tickets et issues
 
 [lektor]: https://www.getlektor.com/
 [DREAL Normandie]: http://normandie.developpement-durable.gouv.fr/
