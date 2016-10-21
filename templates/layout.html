@@ -37,24 +37,26 @@
       <!-- menu récursif -->
       <ul>
       {% for child in root.children recursive %}
-         {% if !child.short var artTitle=child.title %}
-         {% else var artTitle=child.short %}
+         {% if child.short is defined %}
+            {% set art_title = child.short %}
+         {% else %}
+            {% set art_title = child.title %}
          {% if child.parent._path == root._path %}
             {% if child._path != root._path %}
                {% if this.is_child_of(child) %}
                   <strong {% if this._path == child._path %} class="active"{% endif %}>
-                     <a href="{{ child|url }}">{{ child.artTitle }}</a>
+                     <a href="{{ child|url }}">{{ child.art_title }}</a>
                   </strong>
                   <ul style="display:block">{{ loop(child.children) }}</ul>
                {% else %}
-                  <strong><a href="{{ child|url }}">{{ child.artTitle }}</a></strong>
+                  <strong><a href="{{ child|url }}">{{ child.art_title }}</a></strong>
                   <ul style="display:none">{{ loop(child.children) }}</ul>
                {% endif %}
             {% else %}
             {% endif %}
          {% else %}
             <li{% if this._path == child._path %} class="active"{% endif %}>
-               <a href="{{ child|url }}">{{ child.artTitle }}</a></li>
+               <a href="{{ child|url }}">{{ child.art_title }}</a></li>
             {% if this.is_child_of(child) %}
                {% if child.children %}
                   <ul>{{ loop(child.children) }}</ul>
