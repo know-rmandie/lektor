@@ -28,7 +28,7 @@ $.getJSON("./data-normandie-hr.geojson", function(data) {
             $("#content-wrapper").css("width", "100%");
             $("#content-wrapper").css("margin", "0");
            }
-        $("#content-wrapper").css("padding", "0")
+        $("#content-wrapper").css("padding", "0");
         $(window).resize(function() {
             clearTimeout(window.resizedFinished);
             window.resizedFinished = setTimeout(function() {

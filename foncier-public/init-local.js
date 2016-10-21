@@ -23,23 +23,21 @@ $.getJSON("./CessionFoncierEtatPoint.geojson", function(data) {
         })(jQuery);
 
         function letsStart() {
-            if (document.location.href.match(/carteSeule/g)) {
-                context =
-                    "full";
-                $("#header,#footer,h2").css("display", "none");
-                $("#main, #page").css("width", "100%");
-                $("#page").css("max-width", "none");
-                $("#main, #page").css("margin", "0");
-                $("#main, #page").css("padding", "0")
-            }
-            $(window).resize(function() {
-                clearTimeout(window.resizedFinished);
-                window.resizedFinished = setTimeout(function() {
-                    getWidth(context);
-                    $("#map").css("width", rW).css("height", rH)
-                }, 250)
-            });
-            getWidth(context);
+           if (document.location.href.match(/carteSeule/g)) {
+               context = "full";
+               $("#header,#footer,#sidedrawer,.mui--appbar-height").css("display", "none");
+               $("#content-wrapper").css("width", "100%");
+               $("#content-wrapper").css("margin", "0");
+             }
+           $("#content-wrapper").css("padding", "0");
+           $(window).resize(function() {
+               clearTimeout(window.resizedFinished);
+               window.resizedFinished = setTimeout(function() {
+                   getWidth(context);
+                   $("#map").css("width", rW).css("height", rH)
+               }, 250)
+           });
+           getWidth(context);
             $("#map").css("width", rW).css("height", rH);
             if (knwrmdZoom == null) knwrmdZoom = Math.sqrt(rW) / 3.75;
             carte = L.map("map").setView([knwrmdLat,
@@ -72,17 +70,17 @@ $.getJSON("./CessionFoncierEtatPoint.geojson", function(data) {
             for (i in Statut) {
                 var url = Statut[i].icone + ".png";
                 PinCat[Statut[i].id] = L.icon({
-                    iconUrl: "./img/" + url,
-                    iconRetinaUrl: "./img/" + url,
+                    iconUrl: url,
+                    iconRetinaUrl: url,
                     iconSize: [20, 38],
                     iconAnchor: [15, 38],
                     popupAnchor: [-5, -39],
-                    shadowUrl: "./img/la-ombre.png",
-                    shadowRetinaUrl: "./img/la-ombre.png",
+                    shadowUrl: "la-ombre.png",
+                    shadowRetinaUrl: "la-ombre.png",
                     shadowSize: [40, 20],
                     shadowAnchor: [0, 20]
                 });
-                HtmlLeg["Statut"] += '<img src="./img/' + url + '" style="height:16px"/>&nbsp;' + Statut[i].string + "<br/>"
+                HtmlLeg["Statut"] += '<img src="' + url + '" style="height:16px"/>&nbsp;' + Statut[i].string + "<br/>"
             }
             HtmlLeg["Statut"] += "</div>";
             var foncPStatut = L.markerClusterGroup({
