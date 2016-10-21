@@ -37,11 +37,7 @@
       <!-- menu récursif -->
       <ul>
       {% for child in root.children recursive %}
-         {% if child.short %}
-            {% set art_title = child.short %}
-         {% else %}
-            {% set art_title = child.title %}
-         {% endif %}
+         {% set art_title = child.short if child.short else set art_title = child.title %}
          {% if child.parent._path == root._path %}
             {% if child._path != root._path %}
                {% if this.is_child_of(child) %}
