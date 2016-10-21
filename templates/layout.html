@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 {% set root = site.get('/') %}
+{% set artTitle = "" %}
 <head>
    <!-- technical -->
    <meta charset="utf-8">
@@ -38,26 +39,26 @@
       <ul>
       {% for child in root.children recursive %}
          {% if child.short %}
-            {% set child.art_title = child.short %}
+            {% set artTitle = child.short %}
          {% else %}
-            {% set child.art_title = child.title %}
+            {% set artTitle = child.title %}
          {% endif %}
          {% if child.parent._path == root._path %}
             {% if child._path != root._path %}
                {% if this.is_child_of(child) %}
                   <strong {% if this._path == child._path %} class="active"{% endif %}>
-                     <a href="{{ child|url }}">{{ child.art_title }}</a>
+                     <a href="{{ child|url }}">{{ artTitle }}</a>
                   </strong>
                   <ul style="display:block">{{ loop(child.children) }}</ul>
                {% else %}
-                  <strong><a href="{{ child|url }}">{{ child.art_title }}</a></strong>
+                  <strong><a href="{{ child|url }}">{{ artTitle }}</a></strong>
                   <ul style="display:none">{{ loop(child.children) }}</ul>
                {% endif %}
             {% else %}
             {% endif %}
          {% else %}
             <li{% if this._path == child._path %} class="active"{% endif %}>
-               <a href="{{ child|url }}">{{ child.art_title }}</a></li>
+               <a href="{{ child|url }}">{{ artTitle }}</a></li>
             {% if this.is_child_of(child) %}
                {% if child.children %}
                   <ul>{{ loop(child.children) }}</ul>
