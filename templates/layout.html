@@ -37,7 +37,7 @@
       <!-- menu récursif -->
       <ul>
       {% for child in root.children recursive %}
-         {% if child.short is defined %}
+         {% if child.short %}
             {% set art_title = child.short %}
          {% else %}
             {% set art_title = child.title %}
