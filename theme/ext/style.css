@@ -1,0 +1,172 @@
+article a[href^="http"] {
+  text-decoration: underline
+}
+
+a[href$=".md"] {
+  color: rgba(0, 0, 0, .75)
+}
+
+figure {
+  width: 100%;
+  max-width:100%;
+  margin: 0;
+  padding: .4rem;
+  text-align: center;
+}
+
+figcaption {
+  text-align: center;
+  font-size: .8 rem;
+  font-style: italic;
+}
+
+img[alt$=">"], div[alt$=">"] {
+  float: right;
+  max-width: 33%;
+  margin: 0 0 1rem 1rem;
+}
+
+img[alt$="<"], div[alt$="<"] {
+  float: left;
+  max-width: 33%;
+  margin: 0 1rem 1rem 0;
+}
+
+img[alt$="><"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: auto;
+  float: none !important;
+}
+
+table {
+  padding: 0;
+  max-width: 1000px;
+  margin: auto;
+}
+
+table tr th {
+  text-align: center;
+  font-weight: 600;
+}
+
+table tr td:first-child {
+  padding-left: .5rem;
+}
+
+table tr td:last-child {
+  padding-right: .5rem;
+}
+
+table tr:last-child td {
+  padding-bottom: .5em
+}
+
+td.text {
+  text-align: left !important;
+}
+
+td.int {
+  text-align: right !important;
+}
+
+td.real {
+  text-align: right !important;
+}
+
+.revision {
+  color: rgba(0, 0, 0, .5);
+  text-align: right;
+  font-family: monospace;
+  font-size: .75rem;
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+.m-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.md-typeset code, .md-typeset pre {
+  font-size: 100%;
+}
+
+.missing {
+  background-color: pink;
+}
+
+.md-header {
+  z-index: 1100;
+}
+
+.md-sidebar {
+  z-index: 1050;
+}
+
+.md-content article p {
+  text-align: justify;
+}
+
+article .md-search__input {
+  padding: 0 .4rem
+}
+
+article .md-search__input:hover, article .md-search__input:focus, article .md-search__input:active {
+  border: 1px solid rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .1);
+}
+
+.md-grid {
+  max-width: 66rem;
+}
+.source {
+  width: 100%;
+  display: block;
+  font-style: italic;
+  font-size: .7rem;
+  text-align: right !important;
+}
+
+.center {
+  text-align: center;
+}
+
+@media print {
+  html {
+    font-size: 12pts !important;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  figure, table, svg {
+    max-width:100%;
+    page-break-inside: avoid !important;
+  }
+
+  .md-container, .md-main__inner {
+    padding: 0;
+    margin: 0
+  }
+}

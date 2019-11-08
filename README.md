@@ -1,40 +1,27 @@
-![Build Status](https://gitlab.com/know-rmandie/lektor/badges/master/build.svg)
----
-_La nouvelle page pour know-rmandie sur gitlab dans une version utilisant [Lektor]. Le projet original est hébergé sur Gitlab. Les sources originales sont commentables sur Framagit._
+*Le [projet original][origin] est hébergé sur [gitlab][gitlab]. D'autres versions peuvent être déployées, notamment sur github, mais il s'agit de mirroirs, pas forcément fonctionnels...*
 
-# A propos
-Know-rmandie est un projet initié par la [DREAL Normandie]. Il comporte des outils permettant de faciliter la diffusion d'informations utiles aux territoires normand sur son site internet. Tout ici est reutilisable et adaptable à vos besoins, [n'hésitez pas](./forks/new)
+# Outils et pages au service des territoires
+Ce répertoire contient plusieurs projets (ou leur documentation) destinés à capitaliser et mettre en forme des informations sur les territoires. C'est un travail initié pour la Normandie, mais adaptable à n'importe quel autre territoire...
 
-# Sources licences
-* **Pour le code**, l'outil s'appuie sur :
- * [lektor][lektor] - [Licence](https://github.com/lektor/lektor/blob/master/LICENSE) MIT?
- * [jQuery][jQuery] - Licence MIT
- * [leaflet][leaflet] - Licence 2-clause BSD, et son extension [markerCluster] - Licence MIT
- * [MUIcss][MUIcss] - Licence MIT
- * [Font Awesome][Font Awesome] - Licence SIL OFL 1.1 (police) et MIT (code)
- * [post Gitlab issues][pGi] - Licence MIT
-* **Pour les données** :
- * [GeoFLA][GeoFLA] de l'IGN - [Licence ouverte]
- * [OpenStreetMap][OpenStreetMap] - Licence ODbL. Il est possible d'utiliser les traitements graphiques de ESRI, Stamen Design...
- * Observatoire normand de la ville durable (données publiques - DREAL Normandie)
- * Données du ministère du développement durable (DGALN / AD4)
+## Licences
 
- Les développements réalisés dans le cadre du projet sont sous licence [EUPL][EUPL]
+Know-rmandie est libre et s'appuye sur des logiciels libres
 
- ## parcours
- Actuellement en phase de test, le projet est déployé via gitlab et envoyé sur framagit pour la gestion des tickets et issues
+* [MkDocs](https://www.mkdocs.org) propulse le wiki - licence BSD 2-Clause
+  * le theme [material](https://squidfunk.github.io/mkdocs-material) - licence MIT
+  * le plugin [awesome-pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) - licence MIT
 
-[lektor]: https://www.getlektor.com/
-[DREAL Normandie]: http://normandie.developpement-durable.gouv.fr/
+L'ensemble des adaptations, développements et contenus sont, sauf mention contraire, sous [licence ouverte][./LICENCE.md]
 
-[jQuery]: https://jquery.org
-[leaflet]: http://leafletjs.com/
-[markerCluster]: https://github.com/Leaflet/Leaflet.markercluster
-[MUIcss]: https://www.muicss.com/
-[Font Awesome]: http://fontawesome.io/
-[pGi]: https://gitlab.com/sycom/post-Gitlab-issues
-[GeoFLA]: https://www.data.gouv.fr/fr/datasets/geofla-communes/
-[OpenStreetMap]: http://osm.org
+## Circuit
+* **[Gitlab][origin]** ([issues][issues]) > **[gitlab.io page][gl-page]**
+  * [Github][github]
 
-[Licence ouverte]: http://wiki.data.gouv.fr/wiki/Licence_Ouverte_/_Open_Licence
-[EUPL]: https://joinup.ec.europa.eu/community/eupl/description
+[origin]: https://gitlab.com/know-rmandie/know-rmandie.gitlab.io
+[issues]: https://gitlab.com/know-rmandie/know-rmandie.gitlab.io/issues
+[f.io-page]: https://know-rmandie.frama.io
+[gl-page]: https://know-rmandie.gitlab.io
+[gh-page]: https://know-rmandie.github.io
+
+[gitlab]:https://gitlab.com/know-rmandie/know-ramndie.gitlab.io
+[github]:https://github.com/know-rmandie/know-rmandie.gitlab.io
