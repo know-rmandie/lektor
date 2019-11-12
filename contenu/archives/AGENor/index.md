@@ -1,9 +1,6 @@
-title:  Application Gestion des Etudes Normandie - Documentation
----
-short: doc. AGENor
----
-body:
-Le présent ensemble de documents, encore largement en évolution, vise à mieux comprendre le fonctionnement de l'outil de suivi des études et son lien avec le processus "réel" de réalisation des études. La version la plus à jour de cette documentation est toujours sur le site principal de diffusion (http://know-rmandie.gitlab.io/AGENor).
+title: Application Gestion des Etudes
+
+Le présent ensemble constituait la documentation utilisée et mise en place pour le développement de l'outil de suivi des études et son lien avec le processus "réel" de réalisation des études.
 
 La vie d'une étude, [telle que définie par le comité des études](definition-etude), est ainsi décrite dans le [flux de production](./flux-production).
 

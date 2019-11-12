@@ -139,6 +139,7 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
 .md-grid {
   max-width: 66rem;
 }
+
 .source {
   width: 100%;
   display: block;
@@ -149,6 +150,12 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
 
 .center {
   text-align: center;
+}
+
+@media only screen and (min-width:76.25em) {
+  .md-sidebar--secondary {
+    margin-left: 66rem;
+  }
 }
 
 @media print {
