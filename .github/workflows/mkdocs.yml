@@ -11,6 +11,9 @@ jobs:
     - name: Checkout on Current Commit
       uses: actions/checkout@master
     - name: Install the requirements
+      uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
       run: python -m pip install -r py-requirements.txt
     - name: Build with mkdocs
       run: python -m mkdocs build --clean
