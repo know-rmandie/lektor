@@ -23,13 +23,9 @@ $.getJSON("./data/data-ville-durable.geojson", function(data) {
 
   function letsStart() {
     if (document.location.href.match(/carteSeule/g)) {
-      context =
-        "full";
-      $("#header,#footer,h2").css("display", "none");
-      $("#main, #page").css("width", "100%");
-      $("#page").css("max-width", "none");
-      $("#main, #page").css("margin", "0");
-      $("#main, #page").css("padding", "0")
+        context = "full";
+        knwrmdZoom = 9;
+        $("body").addClass("carteSeule");
     }
     $(window).resize(function() {
       clearTimeout(window.resizedFinished);

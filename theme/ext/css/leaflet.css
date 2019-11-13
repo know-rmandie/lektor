@@ -13,6 +13,18 @@
 	height:auto;
 }
 
+/* Affichage avec ?carteSeule */
+
+body.carteSeule header, body.carteSeule .md-tabs, body.carteSeule .md-footer, body.carteSeule .md-content__inner::before, body.carteSeule .md-sidebar, body.carteSeule article>a, body.carteSeule article>h1, body.carteSeule article>p, body.carteSeule article>.revision {
+	display: none;
+}
+
+body.carteSeule .md-container, body.carteSeule .md-grid, body.carteSeule .md-content, body.carteSeule article, body.carteSeule .map  {
+	width:100%;
+	margin:0;padding:0;
+	max-width: 100%;
+}
+
 @media (min-width: 490px) and (max-width:520px) {
 	.map {
 		height:520px

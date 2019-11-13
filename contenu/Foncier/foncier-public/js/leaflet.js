@@ -23,15 +23,11 @@ $.getJSON("./data/CessionFoncierEtatPoint.geojson", function(data) {
         })(jQuery);
 
         function letsStart() {
-            if (document.location.href.match(/carteSeule/g)) {
-                context =
-                    "full";
-                $("#header,#footer,h2").css("display", "none");
-                $("#main, #page").css("width", "100%");
-                $("#page").css("max-width", "none");
-                $("#main, #page").css("margin", "0");
-                $("#main, #page").css("padding", "0")
-            }
+          if (document.location.href.match(/carteSeule/g)) {
+              context = "full";
+              $("body").addClass("carteSeule");
+              knwrmdZoom = 9;
+          }
             $(window).resize(function() {
                 clearTimeout(window.resizedFinished);
                 window.resizedFinished = setTimeout(function() {
