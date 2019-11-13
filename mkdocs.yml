@@ -6,7 +6,7 @@ site_url: 'http://127.0.0.1:8000'
 #use_directory_urls: false
 
 # Copyright
-copyright: 'Copyright &copy; 2003 - 2020 Collectif know-rmand'
+copyright: 'Copyright &copy; 2003 - 2020 <a href="./a_propos/partenaires/">Collectif know-rmand</a>'
 
 # Dépôt
 repo_name: 'know-rmandie/know-rmandie.gitlab.io'
@@ -66,6 +66,7 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.extra
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink

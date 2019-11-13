@@ -182,6 +182,7 @@
                 var svg = d3.select('#OcsolAdn');
                 svg.attr("width", document.getElementById("OcSol").clientWidth);
                 svg.attr("height", "300");
+
                 var margin = {
                         top: 5,
                         right: 20,
@@ -190,6 +191,7 @@
                     },
                     width = larg || +svg.attr("width") - margin.left - margin.right,
                     height = +svg.attr("height") - margin.top - margin.bottom;
+                svg.attr("viewBox", "0 0 " + svg.attr('width') + " " + svg.attr('height'));
                 $("#OcSol svg g").remove();
                 var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -556,15 +558,18 @@
                 width = document.getElementById("OcSol").clientWidth - margin.left - margin.right,
                 height = width / 2 - margin.top - margin.bottom;
 
+
             // création des deux axes
             var x = d3.scaleBand().range([0, width]).padding(0.1);
             var y = d3.scaleLinear().range([height, 0]);
-
+            var gWidth = width + margin.left + margin.right;
+            var gHeight = height + margin.top + margin.bottom;
             var svg = d3.select("#" + targetId).append("svg")
-                .attr("width", width + margin.left + margin.right)
-                .attr("height", height + margin.top + margin.bottom)
+                .attr("width", gWidth)
+                .attr("height", gHeight)
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+            d3.select("#" + targetId + ">svg").attr("viewBox", "0 0 " + gWidth + " " + gHeight);
 
             // Mise à l'échelle des axes
             x.domain(data.map(function(d) {

@@ -8,7 +8,7 @@ a[href$=".md"] {
 
 figure {
   width: 100%;
-  max-width:100%;
+  max-width: 100%;
   margin: 0;
   padding: .4rem;
   text-align: center;
@@ -152,28 +152,94 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
   text-align: center;
 }
 
-@media only screen and (min-width:76.25em) {
+.md-typeset .admonition.map>.admonition-title::before,
+.md-typeset .admonition.map>summary::before {
+  color: #00bfa5;
+  content: "\e55b";
+}
+
+.md-typeset .admonition.chart>.admonition-title::before,
+.md-typeset .admonition.chart>summary::before {
+  color: #00bfa5;
+  content: "\e6e1";
+}
+
+.md-typeset .admonition.map>.admonition-title,
+.md-typeset .admonition.chart>.admonition-title {
+  background-color: rgba(0, 191, 165, .1);
+}
+
+.md-typeset .admonition.map,
+.md-typeset .admonition.chart {
+  border-left-color: #00bfa5;
+}
+
+@media (min-width:50em) {
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .three>.admonition {
+    flex-basis: 49%;
+    flex-grow: 1;
+  }
+}
+
+@media (min-width:76.25em) {
   .md-sidebar--secondary {
     margin-left: 66rem;
+  }
+
+  .two>.admonition {
+    flex-basis: 49%;
+    flex-grow: 1;
+  }
+
+  .three>.admonition {
+    flex-basis: 30%;
+    max-width: 49%;
+    flex-grow: 1;
   }
 }
 
 @media print {
-  html {
-    font-size: 12pts !important;
+  html, .md-container, .md-main__inner, .md-content, .md-content__inner {
+    margin: 0;
+    padding: 0
   }
 
   h1 {
     text-align: center;
   }
 
+  h1, h2, h3, caption {
+  page-break-after: avoid;
+}
+
+  figure, table, svg, .md-main__inner {
+    max-width: 100% !important;
+  }
+
   figure, table, svg {
-    max-width:100%;
     page-break-inside: avoid !important;
   }
 
-  .md-container, .md-main__inner {
-    padding: 0;
-    margin: 0
+  p, blockquote {
+    orphans: 3;
+    widows: 3;
+}
+
+  article {
+    margin: 1cm;
+  }
+
+  .ui-helper-hidden-accessible {
+    display:none;
+  }
+
+  html, body, p, blockquote, li {
+    font-size: 12pt !important;
   }
 }

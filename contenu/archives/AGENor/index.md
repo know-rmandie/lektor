@@ -1,6 +1,7 @@
 title: Application Gestion des Etudes
 
-Le présent ensemble constituait la documentation utilisée et mise en place pour le développement de l'outil de suivi des études et son lien avec le processus "réel" de réalisation des études.
+!!! info
+    Le présent ensemble constituait la documentation utilisée et mise en place pour le développement de l'outil de suivi des études et son lien avec le processus "réel" de réalisation des études.
 
 La vie d'une étude, [telle que définie par le comité des études](definition-etude), est ainsi décrite dans le [flux de production](./flux-production).
 
