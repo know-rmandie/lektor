@@ -2,8 +2,7 @@
     $(function() {
         /* --- */
         // outils de débugage
-        var Tst = [];
-
+        let Tst = [];
         function tester(v, text) { // variable testée, texte descriptif
             if (Tst[text] < 20 || Tst[text] === undefined) {
                 if (Tst[text] === undefined) Tst[text] = 0;
@@ -20,6 +19,10 @@
             EvolNaf = {},
             Densites = {},
             Intensites = {};
+        let Pdata = [],
+            Edata = [],
+            Ddata = [],
+            Idata = [];
         var colorPartNaf = d3.scaleLinear()
             .domain([50, 85, 90, 100])
             .range(["purple", "red", "gold", "green"]),
@@ -164,23 +167,26 @@
                 drawOs(id);
                 writeNaf(id);
                 writeIC(id);
-                if (firstTime > 0) traceGraphes();
+                if (firstTime > 0) populateGraphes();
                 firstTime += -1;
+                traceGraphes();
                 // bascule sur l'onglet de départ
                 if (ongl !== "no") bascule(ongl, false);
                 hyperlink();
                 // fonctions de redimensionnement (fenêtre et impression)
                 $(window).on("resize", function() {
-                    drawOs(id)
+                    drawOs(id);
+                    traceGraphes();
                 });
                 window.onbeforeprint = function() {
-                    drawOs(id, 550);
+                    drawOs(id);
+                    traceGraphes(550);
                 };
             }
             // tracé du graphe d'occupation des sols
             function drawOs(id, larg) {
                 var svg = d3.select('#OcsolAdn');
-                svg.attr("width", document.getElementById("OcSol").clientWidth);
+                svg.attr("width", document.getElementById("fiche").clientWidth);
                 svg.attr("height", "300");
 
                 var margin = {
@@ -192,6 +198,7 @@
                     width = larg || +svg.attr("width") - margin.left - margin.right,
                     height = +svg.attr("height") - margin.top - margin.bottom;
                 svg.attr("viewBox", "0 0 " + svg.attr('width') + " " + svg.attr('height'));
+                svg.attr("width","100%");
                 $("#OcSol svg g").remove();
                 var g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -451,7 +458,7 @@
             }
 
             // fonctions de construction des graphes d'analyse des données
-            function traceGraphes() {
+            function populateGraphes() {
                 for (var t in osnaf) {
                     // calcul des parts
                     var part = Math.round(1 * osnaf[t].surf_naf / osnaf[t].surf * 50) * 2;
@@ -467,7 +474,7 @@
                     if (EvolNaf[evol] !== undefined) EvolNaf[evol] += 1
                     else EvolNaf[evol] = 1;
                 }
-                var Pdata = [];
+
                 for (var p in PartNaf) {
                     Pdata.push({
                         "classe": p,
@@ -477,11 +484,7 @@
                 // On enlève la classe "NaN"
                 Pdata.pop();
                 Pdata.shift();
-                // voir si on tri / enlève (si on a écrété)
-                // insertion du svg (part NAF) dans #IcePartNaf
-                insertBarGraph("IcePartNaf", Pdata, 1000, colorPartNaf, "part des espaces NAF (en %)", "nbre de communes");
-
-                var Edata = [];
+                // voir si on trie / enlève (si on a écrété)
                 for (var e in EvolNaf) {
                     Edata.push({
                         "classe": e,
@@ -496,10 +499,6 @@
                 // On enlève la première et la dernière classe
                 Edata.pop();
                 Edata.shift();
-
-                // insertion du svg (Evolution NAF) dans #IceEvolNaf
-                insertBarGraph("IceEvolNaf", Edata, 1300, colorNaf, "évolution des espaces NAF (en %)", "nbre de communes");
-
 
                 // compilation des données pour les graphes densité et intensité
                 for (var t in ccf) {
@@ -516,7 +515,6 @@
                     if (Intensites[int] !== undefined) Intensites[int] += 1
                     else Intensites[int] = 1;
                 }
-                var Ddata = [];
                 for (var d in Densites) {
                     Ddata.push({
                         "classe": d,
@@ -527,7 +525,6 @@
                 Ddata.pop();
                 Ddata.pop();
 
-                var Idata = [];
                 for (var d in Intensites) {
                     Idata.push({
                         "classe": d,
@@ -537,45 +534,61 @@
                 // On enlève la classe 26 et plus et la classe "NaN" du tableau
                 Idata.pop();
                 Idata.pop();
+}
+
+function traceGraphes(larg) {
+                // insertion du svg (part NAF) dans #IcePartNaf
+                insertBarGraph("IcePartNaf", Pdata, 1000, colorPartNaf, "part des espaces NAF (en %)", "nbre de communes", larg);
+
+                // insertion du svg (Evolution NAF) dans #IceEvolNaf
+                insertBarGraph("IceEvolNaf", Edata, 1300, colorNaf, "évolution des espaces NAF (en %)", "nbre de communes", larg);
 
                 // insertion du premier svg (Densités) dans #iConsGraph
-                insertBarGraph("IceDensGraph", Ddata, 550, colorDens, "densité des constructions neuves (en locaux / ha)", "nbre de communes");
+                insertBarGraph("IceDensGraph", Ddata, 550, colorDens, "densité des constructions neuves (en locaux / ha)", "nbre de communes",larg);
 
                 // insertion du deuxième svg (Intensités) dans #iConsGraph
-                insertBarGraph("IceIntGraph", Idata, 450, colorInt, "intensité de la construction (en locaux / 1000 hab / an)", "nbre de communes");
+                insertBarGraph("IceIntGraph", Idata, 450, colorInt, "intensité de la construction (en locaux / 1000 hab / an)", "nbre de communes",larg);
             }
         }
 
         // fonction de construction d'un graphe à barre pour une donnée avec classe et effectif
-        function insertBarGraph(targetId, data, yMax, colorScale, xTitle, yTitle) {
+        function insertBarGraph(targetId, data, yMax, colorScale, xTitle, yTitle, myWidth) {
             // dimensions des graphes, marges etc.
-            var margin = {
+            let margin = {
                     top: 10,
                     right: 30,
                     bottom: 40,
                     left: 50
                 },
-                width = document.getElementById("OcSol").clientWidth - margin.left - margin.right,
-                height = width / 2 - margin.top - margin.bottom;
-
-
-            // création des deux axes
-            var x = d3.scaleBand().range([0, width]).padding(0.1);
-            var y = d3.scaleLinear().range([height, 0]);
-            var gWidth = width + margin.left + margin.right;
-            var gHeight = height + margin.top + margin.bottom;
+                width = myWidth || document.getElementById("fiche").clientWidth - margin.left - margin.right,
+                height = width / 2 - margin.top - margin.bottom,
+                gWidth = width + margin.left + margin.right,
+                gHeight = height + margin.top + margin.bottom;
+            $("#" + targetId +" svg").remove();
             var svg = d3.select("#" + targetId).append("svg")
                 .attr("width", gWidth)
                 .attr("height", gHeight)
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            d3.select("#" + targetId + ">svg").attr("viewBox", "0 0 " + gWidth + " " + gHeight);
+            //d3.select("#" + targetId + ">svg").attr("viewBox", "0 0 " + gWidth + " " + gHeight);
+            // création des deux axes
+            var x = d3.scaleBand().domain(data.map(function(d) {
+                return d.classe;
+            })).range([0, width]).padding(0.1);
+            var y = d3.scaleLinear().range([height, 0]).domain([0, yMax]);
+if(targetId === "IceDensGraph") {
+  tester(myWidth, "myWidth");
+  tester(width, "width");
+  tester(gWidth, "gWidth");
+  tester(height, "height");
+  tester(gHeight, "gHeight");
 
+}
             // Mise à l'échelle des axes
-            x.domain(data.map(function(d) {
+            /*x.domain(data.map(function(d) {
                 return d.classe;
             }));
-            y.domain([0, yMax]);
+            y.domain([0, yMax]);*/
 
             // append the rectangles for the bar chart
             svg.selectAll(".bar")

@@ -10,7 +10,7 @@ Le site a été initié par la [DREAL Normandie][dreal-norm] pour son territoire
     La carte de l'[Observatoire de la ville durable](./ville-durable/) propose un référentiel synthétique des projets normands.
 
 !!! chart "ICE"
-    Les [Indicateurs de Consommation d'Espaces](.I/CE/) donnent une vision synthétique par territoire de sa situation dans ce domaine.
+    Les [Indicateurs de Consommation d'Espaces](./I/CE/) donnent une vision synthétique par territoire de sa situation dans ce domaine.
 
 </div>
 

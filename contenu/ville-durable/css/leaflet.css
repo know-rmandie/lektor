@@ -2,32 +2,6 @@ a.leaflet-control-layers-toggle {
   border:none;
 }
 
-.avct:before {
-    font-family: FontAwesome;
-    margin-right: .35em;
-    font-size: 120%
-}
-
-.avct.inconnu:before {
-    content: '\f128'
-}
-
-.avct.intention:before {
-    content: '\f0eb'
-}
-
-.avct.projet:before {
-    content: '\f073'
-}
-
-.avct.chantier:before {
-    content: '\f01d'
-}
-
-.avct.réalisé:before {
-    content: '\f00c'
-}
-
 .marker-cluster div {
     border-radius: 50%;
     border: none;
