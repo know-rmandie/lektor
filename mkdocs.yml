@@ -6,7 +6,7 @@ site_url: 'http://127.0.0.1:8000'
 #use_directory_urls: false
 
 # Copyright
-copyright: 'Copyright &copy; 2003 - 2020 <a href="./a_propos/partenaires/">Collectif know-rmand</a>'
+copyright: 'Copyright &copy; 2003 - 2020 <a href="https://know-rmandie.gitlab.io/a_propos/partenaires/">Collectif know-rmand</a>'
 
 # Dépôt
 repo_name: 'know-rmandie/know-rmandie.gitlab.io'

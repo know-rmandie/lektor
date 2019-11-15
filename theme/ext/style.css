@@ -2,10 +2,6 @@ article a[href^="http"] {
   text-decoration: underline
 }
 
-a[href$=".md"] {
-  color: rgba(0, 0, 0, .75)
-}
-
 figure {
   width: 100%;
   max-width: 100%;
@@ -134,6 +130,29 @@ article .md-search__input {
 article .md-search__input:hover, article .md-search__input:focus, article .md-search__input:active {
   border: 1px solid rgba(0, 0, 0, .5);
   background: rgba(0, 0, 0, .1);
+}
+
+.md-footer-meta .md-footer-copyright__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.md-footer-copyright>div {
+  flex-basis: 33%;
+  flex-grow: 1;
+}
+
+.md-footer-copyright>div a {
+  color: white;
+}
+
+.md-footer-copyright__inner>div:last-child>div {
+  text-align:right;
+}
+
+.md-footer-copyright__highlight .material-icons {
+  vertical-align: middle;
 }
 
 .md-grid {

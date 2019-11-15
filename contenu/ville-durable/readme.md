@@ -25,7 +25,7 @@ La cartographie est désormais un _sous-module_ de l'ensemble know-rmandie. On p
 
 * [data/data-ville-durable.geojson](./data/data-ville-durable.geojson) pour les données sur les écoquartiers (cf. [structure des données](./data/) et procédure ci-dessus),
 * [js/config.js](./js/config.js) pour les réglages de base (coordonnées et zoom de départ, choix de la couche de fonds),
-* pensez à supprimer les sous dossiers du projets que vous ne souhaitez pas réutiliser.
+* pensez à supprimer les sous dossiers du projet que vous ne souhaitez pas réutiliser.
 
 ## Sources utilisées / licences
 * **Code** : Outre les éléments propres à [know-rmandie](../../README.md) l'outil s'appuie sur
@@ -39,8 +39,8 @@ La cartographie est désormais un _sous-module_ de l'ensemble know-rmandie. On p
 
 Pour tous les éléments non listés ci-avant l'ensemble des codes et données de l'outil est **réutilisable sous [licence Ouverte][LO-v2]**.
 
-[origin]: https://git.framasoft.org/territoires/cartoVilleDurable
-[demo]: http://know-rmandie.github.io/ville-durable
+[origin]: https://gitlab.com/know-rmandie/know-rmandie.gitlab.io/ville-durable
+[demo]: http://know-rmandie.gitlab.io/ville-durable
 [gdoc-ecoquartiers]: https://docs.google.com/spreadsheets/d/1lybcyHklnN4y_bhH5zRWUhpAJx9AvYdzzw_HphBIT8U
 [jQuery]: https://jquery.org
 [leaflet]: http://leafletjs.com
