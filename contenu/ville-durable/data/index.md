@@ -7,17 +7,17 @@ Il s'agit d'un geojson _presque standard_ il comporte toutefois une section meta
 
 * `type`:**FeatureCollection**
 * `crs` (système de projection - ici les valeurs par défaut)
-  * `type`:**name**
-  * `properties`
-    * `name` : **urn:ogc:def:crs:EPSG::4979**
+    * `type`:**name**
+    * `properties`
+        * `name` : **urn:ogc:def:crs:EPSG::4979**
 * `metadata`
-  * `date`: date de mise à jour des données
-  * `source`: Source des objets de la base. Le code html est accepté, notamment pour les liens vers les sources en question.
+    * `date`: date de mise à jour des données
+    * `source`: Source des objets de la base. Le code html est accepté, notamment pour les liens vers les sources en question.
 * `features` (tableau des objets encadré par `[` et `]`)
-  * `type`:**Feature**,
-  * `geometry`
-    * `type`:**Point**
-    * `coordinates`:[_longitude_,_latitude_]
+    * `type`:**Feature**,
+    * `geometry`
+        * `type`:**Point**
+        * `coordinates`:[_longitude_,_latitude_]
     * `properties`:
         * `id`: identifiant unique du projet
         * `name`: nom du projet

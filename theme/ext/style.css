@@ -202,6 +202,7 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
 
   .three>.admonition {
     flex-basis: 49%;
+    max-width: 49%;
     flex-grow: 1;
   }
 }
@@ -213,6 +214,7 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
 
   .two>.admonition {
     flex-basis: 49%;
+    max-width: 49%;
     flex-grow: 1;
   }
 
@@ -222,6 +224,7 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
     flex-grow: 1;
   }
 }
+
 
 @media print {
   html, .md-container, .md-main__inner, .md-content, .md-content__inner {

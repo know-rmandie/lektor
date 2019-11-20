@@ -54,7 +54,7 @@
             {% endif %}
           {% endif %}
           {% if config.repo_url and page %}
-          {% set source_url = config.repo_url + page.url %}
+          {% set source_url = config.repo_url + 'tree/master/' + page.url %}
             <p>
               <i class="material-icons">code</i>
               <a href="{{ source_url | url }}" title="{{ lang.t('edit.link.title') }}">source</a>
