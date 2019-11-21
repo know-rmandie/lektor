@@ -48,17 +48,24 @@
         </div>
         <div class="md-footer-copyright md-flex__cell">
           <div class="md-footer-copyright__highlight">
+          <ul>
           {% if page.meta %}
             {% if page.meta.revision %}
-              <p>mise à jour {{ page.meta.revision }}</p>
+                <li>mise à jour {{ page.meta.revision }}</li>
             {% endif %}
           {% endif %}
           {% if config.repo_url and page %}
-          {% set source_url = config.repo_url + 'tree/master/' + page.url %}
-            <p>
-              <i class="material-icons">code</i>
-              <a href="{{ source_url | url }}" title="{{ lang.t('edit.link.title') }}">source</a>
-            </p>
+            {% if repo | last == "/" %}
+              {% set repo = repo[:-1] %}
+            {% endif %}
+            {% set source_url = config.repo_url + '/tree/master/' + page.url %}
+            {% set comment_url = config.repo_url + '/issues/new?issue%5Bdescription%5D=' + page.url + '%20>' %}
+            <li>
+              <a href="{{ source_url | url }}" title="{{ lang.t('edit.link.title') }}">source</a>  <i class="material-icons">code</i>
+            </li>
+            <li>
+              <a href="{{ comment_url | url }}" title="{{ lang.t('edit.link.title') }}">une remarque? une proposition?</a>  <i class="material-icons">comment</i>
+            </li>
           {% endif %}
           </div>
         </div>

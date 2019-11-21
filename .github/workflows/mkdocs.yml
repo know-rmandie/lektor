@@ -10,11 +10,12 @@ jobs:
     steps:
     - name: Checkout on Current Commit
       uses: actions/checkout@master
-    - name: Install the requirements
+    - name: Setup python and install the requirements
       uses: actions/setup-python@v1
-      run:
-      - alias python=python3 
-      - python -m pip install -r py-requirements.txt
+      with:
+        python-version: '3.x'
+        architecture: 'x64'
+      run: python -m pip install -r py-requirements.txt
     - name: Build with mkdocs
       run: python -m mkdocs build --clean
     - name: Say that this is not Jekyll

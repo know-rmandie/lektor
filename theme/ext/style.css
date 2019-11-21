@@ -151,6 +151,10 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
   text-align:right;
 }
 
+.md-footer-copyright__inner>div:last-child>div li {
+  list-style:none;
+}
+
 .md-footer-copyright__highlight .material-icons {
   vertical-align: middle;
 }
