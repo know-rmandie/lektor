@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block extrahead %}
-  <link rel="stylesheet" href="{{ 'ext/css/feather.css' | url }}" />
   <link rel="stylesheet" href="{{ 'lib/fonts/material-icons-outlined.css' | url }}">
 
   <script src="{{ 'lib/jquery.min.js' | url }}"></script>
@@ -51,7 +50,7 @@
            <br><a href="https://catalogue.bnf.fr/rechercher.do?motRecherche={{ page.meta.isbn }}">ISBN {{ page.meta.isbn }}</a> {% endif %}
          </p>
         </div>
-      {% endif %}      
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endblock %}
