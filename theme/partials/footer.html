@@ -46,6 +46,9 @@
             </div>
           {% endif %}
         </div>
+
+        {% include "partials/social.html" %}
+
         <div class="md-footer-copyright md-flex__cell">
           <div class="md-footer-copyright__highlight">
           <ul>
@@ -55,21 +58,27 @@
             {% endif %}
           {% endif %}
           {% if config.repo_url and page %}
+            {% set repo = config.repo_url %}
             {% if repo | last == "/" %}
               {% set repo = repo[:-1] %}
             {% endif %}
-            {% set source_url = config.repo_url + '/tree/master/' + page.url %}
-            {% set comment_url = config.repo_url + '/issues/new?issue%5Bdescription%5D=' + page.url + '%20>' %}
+            {% set comment_url = repo + '/issues/new?issue%5Bdescription%5D=' + page.url + '%20>' %}
+            {% set mail_url = 'mailto:incoming+know-rmandie-know-rmandie-gitlab-io-1216279-L1bnsR1r7dELmXL4uLbQ-issue@incoming.gitlab.com?subject=' + page.url + '%20>' %}
+            {% set source_url = repo + 'tree/master/docs/' + page.url[:-1] + '.md'  %}
             <li>
-              <a href="{{ source_url | url }}" title="{{ lang.t('edit.link.title') }}">source</a>  <i class="material-icons">code</i>
+                source  <a href="{{ source_url | url }}" title="code source de cette page"><i class="material-icons">code</i></a>
             </li>
             <li>
-              <a href="{{ comment_url | url }}" title="{{ lang.t('edit.link.title') }}">une remarque? une proposition?</a>  <i class="material-icons">comment</i>
+              une remarque? une proposition? <a href="{{ comment_url | url }}" title="déposer un ticket"><i class="material-icons">comment</i></a> <a href="{{ mail_url | url }}" title="par email"><i class="material-icons">email</i></a>
             </li>
+            {% if page.edit_url %}
+            <li>
+              modifier  <a href="{{ page.edit_url | url }}" title="proposer des modifications (compte nécessaire)"><i class="material-icons">edit</i></a>
+            </li>
+            {% endif %}
           {% endif %}
           </div>
         </div>
-        {% include "partials/social.html" %}
       </div>
     </div>
 </footer>

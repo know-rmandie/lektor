@@ -11,6 +11,7 @@ copyright: 'Copyright &copy; 2003 - 2020 <a href="https://know-rmandie.gitlab.io
 # Dépôt
 repo_name: 'know-rmandie/know-rmandie.gitlab.io'
 repo_url: 'https://gitlab.com/know-rmandie/know-rmandie.gitlab.io/'
+edit_uri: 'edit/contributions/'
 
 # Configuration Personalisation
 docs_dir: 'contenu'
@@ -30,6 +31,13 @@ theme:
 
 extra_css:
   - ext/style.css
+
+extra:
+  social:
+    - type: 'gitlab'
+      link: 'https://gitlab.com/know-rmandie'
+    - type: 'github'
+      link: 'https://github.com/know-rmandie'
 
 # Plugins
 plugins:

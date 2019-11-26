@@ -2,6 +2,8 @@ article a[href^="http"] {
   text-decoration: underline
 }
 
+article>a:first-child {display:none}
+
 figure {
   width: 100%;
   max-width: 100%;
@@ -143,7 +145,7 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
   flex-grow: 1;
 }
 
-.md-footer-copyright>div a {
+.md-footer-copyright a, .md-footer-social {
   color: white;
 }
 
@@ -158,6 +160,11 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
 .md-footer-copyright__highlight .material-icons {
   vertical-align: middle;
 }
+
+.md-footer-social {
+  font-size: 1.5rem;
+}
+
 
 .md-grid {
   max-width: 66rem;
@@ -175,11 +182,23 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
   text-align: center;
 }
 
+.md-typeset .admonition {
+  margin: .5rem 0;
+}
+
 .md-typeset .admonition.map>.admonition-title::before,
 .md-typeset .admonition.map>summary::before {
   color: #00bfa5;
   content: "\e55b";
 }
+
+.md-typeset .admonition.doc>.admonition-title::before,
+.md-typeset .admonition.doc>summary::before {
+  color: #3f51b5;
+  content: "\e865";
+}
+
+
 
 .md-typeset .admonition.chart>.admonition-title::before,
 .md-typeset .admonition.chart>summary::before {
@@ -197,6 +216,10 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
   border-left-color: #00bfa5;
 }
 
+.md-typeset .admonition.doc {
+  border-left-color: #3f51b5;
+}
+
 @media (min-width:50em) {
   .cols {
     display: flex;
@@ -204,7 +227,7 @@ article .md-search__input:hover, article .md-search__input:focus, article .md-se
     justify-content: space-between;
   }
 
-  .three>.admonition {
+  .two>.admonition,.three>.admonition {
     flex-basis: 49%;
     max-width: 49%;
     flex-grow: 1;

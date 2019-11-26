@@ -18,6 +18,9 @@ Le site a été initié par la [DREAL Normandie][dreal-norm] pour son territoire
 !!! chart "Urbanisme"
     Une analyse de [l'évolution des documents d'urbanisme](./urbanisme/) en cours (en 2016).
 
+!!! doc "Foncier Eco"
+    Une expérience de mise en valeur d'outils et de connaissances pour [l'optimisation du foncier économique][foncier-eco].
+
 
 </div>
 
@@ -25,3 +28,4 @@ Le site a été initié par la [DREAL Normandie][dreal-norm] pour son territoire
     Certains projets peuvent dater un peu, mais sont maintenus visibles. Nous [contacter](a_propos/contribuer.md) si les informations fournies ici sont insuffisantes.
 
 [dreal-norm]: https://normandie.developpement-durable.gouv.fr
+[foncier-eco]: https://foncier-eco.gitlab.io

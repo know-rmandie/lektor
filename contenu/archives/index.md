@@ -9,3 +9,6 @@ Si vous cherchez une vision plus complète, la liste des projets archivés est p
 
 ## TiddlyPAC - Porter à Connaissance Automatisé
 [TiddlyPAC](https://know-rmandie.gitlab.io/TiddlyPAC) a été conçu comme un démonstrateur fonctionnel des possibilités offertes pour l'automatisation des porter à connaissance dans le cadre de l'élaboration des documents d'urbanisme. Une application plus complète est en cours de développement.
+
+## Réseau Transition Energétique - Cartographie
+Une [cartographie](./reseau-TE/index.md) réalisée rapidement pour présenter les acteurs de la transition énergétique en Normandie.

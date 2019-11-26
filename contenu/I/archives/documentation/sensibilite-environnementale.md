@@ -23,43 +23,43 @@ Pour chacun des deux thèmes, les enjeux quantifiables recensés sont présenté
 
 ### Nature et paysages
 
-* Exclusion
-   * Sites classés et sites en procédure de classement en instruction ministérielle au niveau national (exemple : Boucle de Roumare et Vallée du Sec Iton)
-   * Espaces et milieux remarquables loi littoral (art. L146-6 du code de l'Urbanisme)
-   * Réserves naturelles nationales et régionales
-   * Arrêtés de protection de biotope
-   * Réserves biologiques Forestières (RBF) Réserves biologiques Intégrales (RBI)
-   * Sites du conservatoire du littoral
-   * Forêts de protection (DRAAF)
-   * Périmètre immédiat de captage
-* Enjeux forts
-   * Zones d'intérêt écologique des Parcs Naturels Régionaux
-   * Sites Natura 2000
-   * Enveloppe des zones à dominante humide (Agence de l'Eau)
-   * Sites inscrits
-   * Projets de sites classés disposant d'un projet de périmètre défini soumis à concertation et enjeux paysagers particuliers (exemple : projets de périmètre du Bec Hellouin et de la Risle Amont...)
-   * Sites du conservatoire des Sites (conservatoire fédératif des espaces naturels)
-   * ZNIEFF de Type I deuxième génération
-   * Zones inondables (nécessité de transparence hydraulique)
-   * Périmètre rapproché de captage
-* Enjeux modérés
-   * Parcs Naturels Régionaux
-   * ZNIEFF de type II
-   * Périmètre éloigné de captage, réserves stratégiques d'eau potable, champs captants
-* Enjeux à prendre en compte
-   * Espaces naturels majeurs et espaces naturels et paysagers de la DTA
-   * SDAGE, SAGE
-   * Schéma de création des aires protégées (en cours)
-   * Orientations régionales de gestion de la Faune et des Habitats (ORGFH)
-   * Profil environnemental régional
-   * Espaces naturels sensibles
-   * Unités paysagères à forts enjeux dans l'atlas régional
-   * Périmètre de protection des monuments historiques
-   * Patrimoine archéologique (DRAC)
-   * Bande des 2000 m Loi littoral (espaces proches du rivage)
-   * Espèces protégées faune-flore (Carnet B du CBNB)
-   * Trames écologiques ( Schémas régionaux de cohérence écologique)
-   * Risques naturels et technologiques
+* **Exclusion**
+    * Sites classés et sites en procédure de classement en instruction ministérielle au niveau national (exemple : Boucle de Roumare et Vallée du Sec Iton)
+    * Espaces et milieux remarquables loi littoral (art. L146-6 du code de l'Urbanisme)
+    * Réserves naturelles nationales et régionales
+    * Arrêtés de protection de biotope
+    * Réserves biologiques Forestières (RBF) Réserves biologiques Intégrales (RBI)
+    * Sites du conservatoire du littoral
+    * Forêts de protection (DRAAF)
+    * Périmètre immédiat de captage
+* **Enjeux forts**
+    * Zones d'intérêt écologique des Parcs Naturels Régionaux
+    * Sites Natura 2000
+    * Enveloppe des zones à dominante humide (Agence de l'Eau)
+    * Sites inscrits
+    * Projets de sites classés disposant d'un projet de périmètre défini soumis à concertation et enjeux paysagers particuliers (exemple : projets de périmètre du Bec Hellouin et de la Risle Amont...)
+    * Sites du conservatoire des Sites (conservatoire fédératif des espaces naturels)
+    * ZNIEFF de Type I deuxième génération
+    * Zones inondables (nécessité de transparence hydraulique)
+    * Périmètre rapproché de captage
+* **Enjeux modérés**
+    * Parcs Naturels Régionaux
+    * ZNIEFF de type II
+    * Périmètre éloigné de captage, réserves stratégiques d'eau potable, champs captants
+* **Enjeux à prendre en compte**
+    * Espaces naturels majeurs et espaces naturels et paysagers de la DTA
+    * SDAGE, SAGE
+    * Schéma de création des aires protégées (en cours)
+    * Orientations régionales de gestion de la Faune et des Habitats (ORGFH)
+    * Profil environnemental régional
+    * Espaces naturels sensibles
+    * Unités paysagères à forts enjeux dans l'atlas régional
+    * Périmètre de protection des monuments historiques
+    * Patrimoine archéologique (DRAC)
+    * Bande des 2000 m Loi littoral (espaces proches du rivage)
+    * Espèces protégées faune-flore (Carnet B du CBNB)
+    * Trames écologiques ( Schémas régionaux de cohérence écologique)
+* Risques naturels et technologiques
 
 ### Sites et sols pollués (travail non achevé)
 
